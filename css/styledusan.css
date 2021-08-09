@@ -1,0 +1,8 @@
+#log-modal, #reg-modal, .close-modal {
+    color: white;
+}
+
+.blog img {
+    width: 600px;
+    height: 400px;
+}
