@@ -23,6 +23,7 @@
 
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
+        <link href="css/styledusan.css" rel="stylesheet">
     </head>
 
     <body>
@@ -69,8 +70,8 @@
                                 Pretražite jela po kategorijama i odmah započnite sa pripremom ovih ukusnih recepata!
                             </p>
                             <div class="carousel-btn">
-                                <a class="btn custom-btn" href="">Uloguj se</a>
-                                <a class="btn custom-btn" href="">Registruj se</a>
+                                <a class="btn custom-btn" href="" data-toggle="modal" data-target="#login-modal">Prijavi se</a>
+                                <a class="btn custom-btn" href="" data-toggle="modal" data-target="#register-modal">Registruj se</a>
                             </div>
                         </div>
                     </div>
@@ -84,8 +85,8 @@
                                 Registrujte se i okačite svoje recepte već danas!
                             </p>
                             <div class="carousel-btn">
-                                <a class="btn custom-btn" href="">Uloguj se</a>
-                                <a class="btn custom-btn" href="">Registruj se</a>
+                                <a class="btn custom-btn" href="" data-toggle="modal" data-target="#login-modal">Prijavi se</a>
+                                <a class="btn custom-btn" href="" data-toggle="modal" data-target="#register-modal">Registruj se</a>
                             </div>
                         </div>
                     </div>
@@ -99,8 +100,8 @@
                                 Kada vas napusti kreativnost u kuhinji, na Receptijani možete pronaći inspiraciju!
                             </p>
                             <div class="carousel-btn">
-                                <a class="btn custom-btn" href="">Uloguj se</a>
-                                <a class="btn custom-btn" href="">Registruj se</a>
+                                <a class="btn custom-btn" href="" data-toggle="modal" data-target="#login-modal">Prijavi se</a>
+                                <a class="btn custom-btn" href="" data-toggle="modal" data-target="#register-modal">Registruj se</a>
                             </div>
                         </div>
                     </div>
@@ -108,101 +109,123 @@
             </div>
         </div>
         <!-- Carousel End -->
-        
-        
-        <!-- Booking Start -->
-        <div class="booking">
+
+
+        <!-- Blog Start -->
+        <div class="blog">
             <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-7">
-                        <div class="booking-content">
-                            <div class="section-header">
-                                <p>Book A Table</p>
-                                <h2>Book Your Table For Private Dinners & Happy Hours</h2>
+                <div class="section-header text-center">
+                    <p>Blog</p>
+                    <h2>Najnovije sa našeg bloga</h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="blog-item">
+                            <div class="blog-img">
+                                <img src="img/blog-1.jpg" alt="Blog">
                             </div>
-                            <div class="about-text">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor, auctor id gravida condimentum, viverra quis sem.
-                                </p>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor, auctor id gravida condimentum, viverra quis sem. Curabitur non nisl nec nisi scelerisque maximus. Aenean consectetur convallis porttitor. Aliquam interdum at lacus non blandit.
-                                </p>
+                            <div class="blog-content">
+                                <h2 class="blog-title">Detoksikacija organizma</h2>
+                                <div class="blog-meta">
+                                    <p><i class="far fa-user"></i>Admin</p>
+                                    <p><i class="far fa-list-alt"></i>Food</p>
+                                    <p><i class="far fa-calendar-alt"></i>01-Jan-2045</p>
+                                    <p><i class="far fa-comments"></i>10</p>
+                                </div>
+                                <div class="blog-text">
+                                    <p>
+                                        Iako se često koristi, mnogima termin detoksikacija organizma nije u potpunosti jasan.
+                                        <br>
+                                        Pod terminom detoksikacija organizma najčešće se misli na određene dijete ili proizvode za koje se tvrdi da podstiču izbacivanje toksina iz organizma.
+                                    </p>
+                                    <a class="btn custom-btn" href="">Pročitaj više</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-5">
-                        <div class="booking-form">
-                            <form>
-                                <div class="control-group">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Name" required="required" />
-                                        <div class="input-group-append">
-                                            <div class="input-group-text"><i class="far fa-user"></i></div>
-                                        </div>
-                                    </div>
+                    <div class="col-md-6">
+                        <div class="blog-item">
+                            <div class="blog-img">
+                                <img src="img/blog-2.jpg" alt="Blog">
+                            </div>
+                            <div class="blog-content">
+                                <h2 class="blog-title">Uticaj čokolade na naš mozak</h2>
+                                <div class="blog-meta">
+                                    <p><i class="far fa-user"></i>Admin</p>
+                                    <p><i class="far fa-list-alt"></i>Food</p>
+                                    <p><i class="far fa-calendar-alt"></i>01-Jan-2045</p>
+                                    <p><i class="far fa-comments"></i>10</p>
                                 </div>
-                                <div class="control-group">
-                                    <div class="input-group">
-                                        <input type="email" class="form-control" placeholder="Email" required="required" />
-                                        <div class="input-group-append">
-                                            <div class="input-group-text"><i class="far fa-envelope"></i></div>
-                                        </div>
-                                    </div>
+                                <div class="blog-text">
+                                    <p>
+                                        Većina nas voli da ima pored sebe bar parče čokolade, ali ne volimo svi istu vrstu: neki više vole mlečnu čokoladu, drugi vole tamnu, belu ili čokoladu punjenu jagodom itd.
+                                        <br>
+                                        Novo istraživanje iz Nemačke pokazalo je da sva čokolada ne deluje isto, kada je u pitanju vaš mozak - mnogo toga zavisi od vaših ličnih sklonosti prema čokoladi.
+                                    </p>
+                                    <a class="btn custom-btn" href="">Pročitaj više</a>
                                 </div>
-                                <div class="control-group">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Mobile" required="required" />
-                                        <div class="input-group-append">
-                                            <div class="input-group-text"><i class="fa fa-mobile-alt"></i></div>
-                                        </div>
-                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="blog-item">
+                            <div class="blog-img">
+                                <img src="img/blog-3.jpg" alt="Blog">
+                            </div>
+                            <div class="blog-content">
+                                <h2 class="blog-title">Uticaj kofeina na naš organizam</h2>
+                                <div class="blog-meta">
+                                    <p><i class="far fa-user"></i>Admin</p>
+                                    <p><i class="far fa-list-alt"></i>Food</p>
+                                    <p><i class="far fa-calendar-alt"></i>01-Jan-2045</p>
+                                    <p><i class="far fa-comments"></i>10</p>
                                 </div>
-                                <div class="control-group">
-                                    <div class="input-group date" id="date" data-target-input="nearest">
-                                        <input type="text" class="form-control datetimepicker-input" placeholder="Date" data-target="#date" data-toggle="datetimepicker"/>
-                                        <div class="input-group-append" data-target="#date" data-toggle="datetimepicker">
-                                            <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
-                                        </div>
-                                    </div>
+                                <div class="blog-text">
+                                    <p>
+                                        Mnogi od nas se oslanjaju na jutarnju šolju kafe ili potrebu za kofeinom u popodnevnim satima kako bi lakše izdržali naporan dan. Ali kofein čini mnogo više od toga da vas samo budi. To je stimulans centralnog nervnog sistema koji na vaše telo utiče na brojne načine.
+                                    </p>
+                                    <a class="btn custom-btn" href="">Pročitaj više</a>
                                 </div>
-                                <div class="control-group">
-                                    <div class="input-group time" id="time" data-target-input="nearest">
-                                        <input type="text" class="form-control datetimepicker-input" placeholder="Time" data-target="#time" data-toggle="datetimepicker"/>
-                                        <div class="input-group-append" data-target="#time" data-toggle="datetimepicker">
-                                            <div class="input-group-text"><i class="far fa-clock"></i></div>
-                                        </div>
-                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="blog-item">
+                            <div class="blog-img">
+                                <img src="img/blog-4.jpg" alt="Blog">
+                            </div>
+                            <div class="blog-content">
+                                <h2 class="blog-title">Zašto je šećer štetan po ljudsko zdravlje</h2>
+                                <div class="blog-meta">
+                                    <p><i class="far fa-user"></i>Admin</p>
+                                    <p><i class="far fa-list-alt"></i>Food</p>
+                                    <p><i class="far fa-calendar-alt"></i>01-Jan-2045</p>
+                                    <p><i class="far fa-comments"></i>10</p>
                                 </div>
-                                <div class="control-group">
-                                    <div class="input-group">
-                                        <select class="custom-select form-control">
-                                            <option selected>Guest</option>
-                                            <option value="1">1 Guest</option>
-                                            <option value="2">2 Guest</option>
-                                            <option value="3">3 Guest</option>
-                                            <option value="4">4 Guest</option>
-                                            <option value="5">5 Guest</option>
-                                            <option value="6">6 Guest</option>
-                                            <option value="7">7 Guest</option>
-                                            <option value="8">8 Guest</option>
-                                            <option value="9">9 Guest</option>
-                                            <option value="10">10 Guest</option>
-                                        </select>
-                                        <div class="input-group-append">
-                                            <div class="input-group-text"><i class="fa fa-chevron-down"></i></div>
-                                        </div>
-                                    </div>
+                                <div class="blog-text">
+                                    <p>
+                                        Velika većina ljudi je svesna da je šećer veoma štetan po ljudsko zdravlje. Ali mnogi od nijh ne bi mogli da navedu glavne razloge za to. U ovom članku ćemo videti zašto je to tako.
+                                    </p>
+                                    <a class="btn custom-btn" href="">Pročitaj više</a>
                                 </div>
-                                <div>
-                                    <button class="btn custom-btn" type="submit">Book Now</button>
-                                </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <!-- <div class="row">
+                    <div class="col-12">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                        </ul> 
+                    </div>
+                </div> -->
             </div>
         </div>
-        <!-- Booking End -->
+        <!-- Blog End -->
         
 
         <!-- About Start -->
@@ -240,28 +263,6 @@
         </div>
         <!-- About End -->
         
-        
-        <!-- Video Modal Start-->
-        <!--
-        <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>     
-        -->   
-                        <!-- 16:9 aspect ratio -->
-        <!--
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src="" id="video"  allowscriptaccess="always" allow="autoplay"></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> 
-        -->
-        <!-- Video Modal End -->
         
         
         <!-- Feature Start -->
@@ -584,87 +585,6 @@
         <!-- Menu End -->
         
         
-        <!-- Team Start -->
-        <div class="team">
-            <div class="container">
-                <div class="section-header text-center">
-                    <p>Our Team</p>
-                    <h2>Our Master Chef</h2>
-                </div>
-                <div class="row">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="team-item">
-                            <div class="team-img">
-                                <img src="img/team-1.jpg" alt="Image">
-                                <div class="team-social">
-                                    <a href=""><i class="fab fa-twitter"></i></a>
-                                    <a href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a href=""><i class="fab fa-linkedin-in"></i></a>
-                                    <a href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                            <div class="team-text">
-                                <h2>Adam Phillips</h2>
-                                <p>CEO, Co Founder</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="team-item">
-                            <div class="team-img">
-                                <img src="img/team-2.jpg" alt="Image">
-                                <div class="team-social">
-                                    <a href=""><i class="fab fa-twitter"></i></a>
-                                    <a href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a href=""><i class="fab fa-linkedin-in"></i></a>
-                                    <a href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                            <div class="team-text">
-                                <h2>Dylan Adams</h2>
-                                <p>Master Chef</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="team-item">
-                            <div class="team-img">
-                                <img src="img/team-3.jpg" alt="Image">
-                                <div class="team-social">
-                                    <a href=""><i class="fab fa-twitter"></i></a>
-                                    <a href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a href=""><i class="fab fa-linkedin-in"></i></a>
-                                    <a href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                            <div class="team-text">
-                                <h2>Jhon Doe</h2>
-                                <p>Master Chef</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="team-item">
-                            <div class="team-img">
-                                <img src="img/team-4.jpg" alt="Image">
-                                <div class="team-social">
-                                    <a href=""><i class="fab fa-twitter"></i></a>
-                                    <a href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a href=""><i class="fab fa-linkedin-in"></i></a>
-                                    <a href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                            <div class="team-text">
-                                <h2>Josh Dunn</h2>
-                                <p>Master Chef</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Team End -->
-        
         
         <!-- Testimonial Start -->
         <div class="testimonial">
@@ -714,64 +634,6 @@
             </div>
         </div>
         <!-- Testimonial End -->
-
-
-        <!-- Blog Start -->
-        <div class="blog">
-            <div class="container">
-                <div class="section-header text-center">
-                    <p>Food Blog</p>
-                    <h2>Latest From Food Blog</h2>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="blog-item">
-                            <div class="blog-img">
-                                <img src="img/blog-1.jpg" alt="Blog">
-                            </div>
-                            <div class="blog-content">
-                                <h2 class="blog-title">Lorem ipsum dolor sit amet</h2>
-                                <div class="blog-meta">
-                                    <p><i class="far fa-user"></i>Admin</p>
-                                    <p><i class="far fa-list-alt"></i>Food</p>
-                                    <p><i class="far fa-calendar-alt"></i>01-Jan-2045</p>
-                                    <p><i class="far fa-comments"></i>10</p>
-                                </div>
-                                <div class="blog-text">
-                                    <p>
-                                        Lorem ipsum dolor sit amet elit. Neca pretim miura bitur facili ornare velit non vulpte liqum metus tortor. Lorem ipsum dolor sit amet elit. Neca pretim miura bitur facili ornare velit non vulpte
-                                    </p>
-                                    <a class="btn custom-btn" href="">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="blog-item">
-                            <div class="blog-img">
-                                <img src="img/blog-2.jpg" alt="Blog">
-                            </div>
-                            <div class="blog-content">
-                                <h2 class="blog-title">Lorem ipsum dolor sit amet</h2>
-                                <div class="blog-meta">
-                                    <p><i class="far fa-user"></i>Admin</p>
-                                    <p><i class="far fa-list-alt"></i>Food</p>
-                                    <p><i class="far fa-calendar-alt"></i>01-Jan-2045</p>
-                                    <p><i class="far fa-comments"></i>10</p>
-                                </div>
-                                <div class="blog-text">
-                                    <p>
-                                        Lorem ipsum dolor sit amet elit. Neca pretim miura bitur facili ornare velit non vulpte liqum metus tortor. Lorem ipsum dolor sit amet elit. Neca pretim miura bitur facili ornare velit non vulpte
-                                    </p>
-                                    <a class="btn custom-btn" href="">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Blog End -->
         
         
         <!-- Contact Start -->
@@ -869,53 +731,6 @@
 
 
         <!-- Footer Start -->
-        <!--
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-7">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="footer-contact">
-                                    <h2>Our Address</h2>
-                                    <p><i class="fa fa-map-marker-alt"></i>123 Street, New York, USA</p>
-                                    <p><i class="fa fa-phone-alt"></i>+012 345 67890</p>
-                                    <p><i class="fa fa-envelope"></i>info@example.com</p>
-                                    <div class="footer-social">
-                                        <a href=""><i class="fab fa-twitter"></i></a>
-                                        <a href=""><i class="fab fa-facebook-f"></i></a>
-                                        <a href=""><i class="fab fa-youtube"></i></a>
-                                        <a href=""><i class="fab fa-instagram"></i></a>
-                                        <a href=""><i class="fab fa-linkedin-in"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="footer-link">
-                                    <h2>Quick Links</h2>
-                                    <a href="">Terms of use</a>
-                                    <a href="">Privacy policy</a>
-                                    <a href="">Cookies</a>
-                                    <a href="">Help</a>
-                                    <a href="">FQAs</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-5">
-                        <div class="footer-newsletter">
-                            <h2>Newsletter</h2>
-                            <p>
-                                Lorem ipsum dolor sit amet elit. Quisque eu lectus a leo dictum nec non quam. Tortor eu placerat rhoncus, lorem quam iaculis felis, sed lacus neque id eros.
-                            </p>
-                            <div class="form">
-                                <input class="form-control" placeholder="Email goes here">
-                                <button class="btn custom-btn">Submit</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        -->
         <div class="footer">
             <div class="copyright">
                 <div class="container">
@@ -924,6 +739,115 @@
             </div>
         </div>
         <!-- Footer End -->
+
+
+
+        <!-- Login and Register modals start -->
+        <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="login-modal-label" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="booking">
+                        <div class="booking-form">
+                            <div class="modal-header">
+                                <h3 class="modal-title" id="log-modal">Prijava</h3>
+                                <button type="button" class="close close-modal" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="control-group">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Korisničko ime" required="required" />
+                                            <div class="input-group-append">
+                                                <div class="input-group-text"><i class="far fa-user"></i></div>
+                                            </div>
+                                            <div class="help-block with-errors" id="uerror"></div>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <div class="input-group">
+                                            <input type="password" class="form-control" placeholder="Lozinka" required="required" />
+                                            <div class="input-group-append">
+                                                <div class="input-group-text"><i class="fa fa-key"></i></div>
+                                            </div>
+                                            <div class="help-block with-errors" id="perror"></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <button class="btn custom-btn" type="submit">Potvrdi</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="modal fade" id="register-modal" tabindex="-1" role="dialog" aria-labelledby="register-modal-label" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="booking">
+                        <div class="booking-form">
+                            <div class="modal-header">
+                                <h3 class="modal-title" id="reg-modal">Registracija</h5>
+                                <button type="button" class="close close-modal" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="control-group">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Korisničko ime" required="required" />
+                                            <div class="input-group-append">
+                                                <div class="input-group-text"><i class="far fa-user"></i></div>
+                                            </div>
+                                            <div class="help-block with-errors" id="nerror-reg"></div>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <div class="input-group">
+                                            <input type="email" class="form-control" placeholder="Email" required="required" />
+                                            <div class="input-group-append">
+                                                <div class="input-group-text"><i class="far fa-envelope"></i></div>
+                                            </div>
+                                            <div class="help-block with-errors" id="uerror-reg"></div>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <div class="input-group">
+                                            <input type="password" class="form-control" placeholder="Lozinka" required="required" />
+                                            <div class="input-group-append">
+                                                <div class="input-group-text"><i class="fa fa-key"></i></div>
+                                            </div>
+                                            <div class="help-block with-errors" id="perror-reg"></div>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <div class="input-group">
+                                            <input type="password" class="form-control" placeholder="Potvrdite lozinku" required="required" />
+                                            <div class="input-group-append">
+                                                <div class="input-group-text"><i class="fa fa-key"></i></div>
+                                            </div>
+                                            <div class="help-block with-errors" id="cperror-reg"></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <button class="btn custom-btn" type="submit">Potvrdi</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Login and Register modals end  -->
+
 
         <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
