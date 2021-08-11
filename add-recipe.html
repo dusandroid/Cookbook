@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Receptijana - Dodaj recept</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Free Website Template" name="keywords">
+        <meta content="Free Website Template" name="description">
+
+        <!-- Favicon -->
+        <link href="img/favicon.ico" rel="icon">
+
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Nunito:600,700" rel="stylesheet">
+        
+        <!-- CSS Libraries -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="lib/animate/animate.min.css" rel="stylesheet">
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
+        <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/styletmp.css">
+    </head>
+
+    <body>
+         <!-- Nav Bar Start -->
+         <div class="navbar navbar-expand-lg bg-light navbar-light">
+            <div class="container-fluid">
+                <a href="index.html"><img src="img/logo.png" height="55px" width="45px"></a>
+                &nbsp; &nbsp;
+                <a href="index.html" class="navbar-brand">Receptijana</a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                    <div class="navbar-nav ml-auto">
+                        <a href="index.html" class="nav-item nav-link">Početna</a>
+                        <a href="menu.html" class="nav-item nav-link">Recepti</a>
+                        <a href="add-recipe.html" class="nav-item nav-link active">Dodaj recept</a>
+                        <a href="about.html" class="nav-item nav-link ">O nama</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Jezik</a>
+                            <div class="dropdown-menu">
+                                <a href="blog.html" class="dropdown-item">Srpski</a>
+                                <a href="single.html" class="dropdown-item">Engleski</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Nav Bar End -->
+        
+        
+        <!-- Page Header Start -->
+        <div class="page-header mb-0">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>Dodaj recept</h2>
+                    </div>
+                    <div class="col-12">
+                        <a href="">Početna</a>
+                        <a href="">Dodaj recept</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Page Header End -->
+
+
+        <!-- Add Recipe Form Start -->
+        <div class="add-recipe">
+            <div class="add-recipe-form">
+                <h3 class="form-label" id="reg-modal">Dodaj recept:</h5>
+                    <form>
+                        <div class="control-group">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Naziv jela" required="required" />
+                                <div class="help-block with-errors" id="nerror-reg"></div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="input-group">
+                                <select class="form-control recipe-group" required="required"> 
+                                    <option class="select-color" selected="selected" value="" disabled>Grupa recepata</option>
+                                    <option class="select-color" value="predjelo">Predjelo</option>
+                                    <option class="select-color" value="glavno jelo">Glavno jelo</option>
+                                    <option class="select-color" value="desert">Desert</option>
+                                    <option class="select-color" value="uzina">Užina</option>
+                                </select>
+                                <!-- <input type="email" class="form-control recipe-group" placeholder="Grupa recepata" required="required" /> -->
+                                <input type="number" class="form-control" placeholder="Težina pripreme" required="required" min="1" max="5" />
+                                <div class="help-block with-errors" id="uerror-reg"></div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="input-group">
+                                <label for="" class="form-label">Trajanje:</label>
+                                <input type="number" class="form-control duration-hours" placeholder="Sati" required="required" min="0" max="23"/>
+                                <input type="number" class="form-control" placeholder="Minuti" required="required"  min="0" max="59"/>
+                                <div class="help-block with-errors" id="perror-reg"></div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="input-group">
+                                <label for="" class="form-label">Izaberite sliku:</label>
+                                <input type="file" id="choose-file" accept="image/*">
+                                <input type="text" class="form-control" placeholder="URL ka videu" required="required" />
+                                <div class="help-block with-errors" id="nerror-reg"></div>
+                            </div>
+                        </div>
+                        <label for="" class="form-label">Uputstvo za pripremu:</label>
+                        <div class="control-group">
+                            <div class="input-group">
+                                <textarea class="form-control" placeholder="" required="required" rows="10"></textarea>
+                                <div class="help-block with-errors" id="cperror-reg"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="btn custom-btn" type="submit">Potvrdi</button>
+                        </div>
+                    </form>
+            </div>
+        </div>
+        <!-- Add Recipe Modal End -->
+
+
+        <!-- Footer Start -->
+        <hr>
+        <div class="footer">
+            <div class="copyright">
+                <div class="container">
+                    <p>Copyright &copy; 2021 Aleksandra Milovic, Dusan Gradojevic, Odsek za softversko inzenjerstvo Elektrotehnickog fakulteta Univerziteta u Beogradu.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="lib/tempusdominus/js/moment.min.js"></script>
+        <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+        <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+        
+        <!-- Contact Javascript File -->
+        <script src="mail/jqBootstrapValidation.min.js"></script>
+        <script src="mail/contact.js"></script>
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+    </body>
+</html>
