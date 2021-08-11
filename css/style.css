@@ -869,7 +869,6 @@ a:focus {
 .menu {
     position: relative;
     padding: 45px 0 15px 0;
-    background: rgba(0, 0, 0, .04);
 }
 
 .menu .menu-tab {
