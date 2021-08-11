@@ -6,3 +6,26 @@
     width: 600px;
     height: 400px;
 }
+
+
+.courses-img {
+    color: #fff;
+}
+
+.course-1 {
+    height: 100px;
+    width: 300px;
+    margin-bottom: 30px;
+}
+
+.course-2 {
+    height: 180px;
+    width: 180px;
+    margin-bottom: 20px;
+}
+
+.course-3 {
+    height: 150px;
+    width: 150px;
+    margin-bottom: 30px;
+}
