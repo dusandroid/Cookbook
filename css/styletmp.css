@@ -1,5 +1,24 @@
 
 /*******************************/
+/********* Navbar CSS *********/
+/*******************************/
+.log-out-btn{
+    padding: 5px;
+    margin-left: 8px
+}
+
+.btn-outline-danger, .btn-outline-danger:active, .btn-outline-danger:visited {
+    border-color: #fbaf32 !important;
+    color: #fbaf32 !important;
+}
+
+.btn-outline-danger:hover{
+    background-color: #fbaf32 !important;
+    color: #fff !important;
+}
+
+
+/*******************************/
 /********* Awards CSS *********/
 /*******************************/
 .awards-img {
