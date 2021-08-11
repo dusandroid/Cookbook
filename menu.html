@@ -23,6 +23,7 @@
 
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
+        <link href="css/styledusan.css" rel="stylesheet">
     </head>
 
     <body>
@@ -72,30 +73,61 @@
         <!-- Page Header End -->
 
         
-        
-        
 
         <!-- Menu Start -->
         <div class="menu">
             <div class="container">
-                <div class="col-md-12">
-                    <input type="text" placeholder="Pretraži recepte..." name="search">
-                    <button type="submit"><i class="fa fa-search"></i></button>
-                </div>
                 <div class="section-header text-center">
-                    <p>Food Menu</p>
-                    <h2>Delicious Food Menu</h2>
+                    <h2>Recepti</h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 offset-2">
+                        <div class="wrapper">
+                            <div class="search-bar">
+                              <input id="search-query-input" type="text" name="search-query-input" placeholder="Pretraži recepte..." value="" />
+                              <button id="search-query-submit" type="submit" name="search-query-submit">
+                                <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                                    <path fill="#666666" d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" />
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="wrapper">
+                            <div class="difficulty">
+                                <select id="difficulty-options" class="custom-select d-block form-control" required data-error="">
+                                    <option disabled selected id="sort-recipes">Sortiraj</option>
+                                    <optgroup label="Težina" id='diff'>
+                                        <option id="diff-asc" value="1">Težina Rastuće</option>
+                                        <option id="diff-desc" value="2">Težina Opadajuće</option>
+                                    </optgroup>
+                                    <optgroup label="Ocena" id='mark'>
+                                        <option id="mark-asc" value="3">Ocena Rastuće</option>
+                                        <option id="mark-desc" value="4">Ocena Opadajuće</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="help-block with-errors"></div>
+                    </div>
                 </div>
                 <div class="menu-tab">
                     <ul class="nav nav-pills justify-content-center">
                         <li class="nav-item">
-                            <a class="nav-link active" data-toggle="pill" href="#burgers">Burgers</a>
+                            <a class="nav-link active" data-toggle="pill" href="#burgers">Svi</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="pill" href="#snacks">Snacks</a>
+                            <a class="nav-link" data-toggle="pill" href="#snacks">Predjelo</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="pill" href="#beverages">Beverages</a>
+                            <a class="nav-link" data-toggle="pill" href="#beverages">Glavno jelo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="pill" href="#beverages">Dezert</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="pill" href="#beverages">Užina</a>
                         </li>
                     </ul>
                     <div class="tab-content">
