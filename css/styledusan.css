@@ -35,11 +35,14 @@
     text-align: center;
 }
 
+
+
 /*=========== Search bar Start ==============*/
 .wrapper {
   width: 100%;
   max-width: 31.25rem;
-  margin: 6rem auto;
+  margin: 2rem auto;
+  margin-bottom: 50px;
 }
 
 .search-bar, .difficulty {
@@ -74,4 +77,3 @@
 }
 
 /*=========== Search bar End ================*/
-
