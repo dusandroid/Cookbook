@@ -44,14 +44,15 @@ $(document).ready(function() {
 
 
     $("#login-submit").click(function() {
+        $("#log-error").text("")
+
         let username = $("#login-username").val()
         let password = $("#login-pass").val()
 
-        let users = JSON.parse(localStorage.getItem("users"))
         let currUser = users.find(user=>user.username == username)
 
         if (currUser == null || currUser.password != password) {
-            $("#perror").text("Podaci nisu ispravno uneti")
+            $("#log-error").text("Podaci nisu ispravno uneti")
             return false
         }
         sessionStorage.setItem("loggedUser", JSON.stringify(currUser))
@@ -135,6 +136,14 @@ $(document).ready(function() {
 
         $("#register-login").hide()
         window.location.href = "index.html"
+    })
+
+    $(".reg-log-btn").click(function() {
+        $("#log-error").text("")
+        $("#reg-username-error").text("")
+        $("#reg-email-error").text("")
+        $("#reg-pass-error").text("")
+        $("#reg-conf-pass-error").text("")
     })
 
 })
