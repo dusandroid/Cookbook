@@ -32,7 +32,6 @@ $(document).ready(function() {
         $(".navbar-nav>li:nth-child(2)").after("<a href='add-recipe.html' class='nav-item nav-link'>Dodaj recept</a>")
         $(".navbar-nav>li:nth-child(6)").after("<button class='btn btn-outline-danger log-out-btn'>Odjavi se</button>")
         $(".register-login").hide()
-        //$(".welcome").html(name+",<div id='welcome'></div>");
     } 
     else {
         $(".register-login").show()
@@ -51,7 +50,7 @@ $(document).ready(function() {
         }
         sessionStorage.setItem("loggedUser", JSON.stringify(currUser))
 
-        $("#register-login").hide()
+        $(".register-login").hide()
         window.location.href = "index.html"
     })
 
@@ -64,7 +63,6 @@ $(document).ready(function() {
         let confPassword = $("#register-conf-pass").val()
 
         let ret = false
-
 
         if (username.length < 5) {
             $("#reg-username-error").text("Korisničko ime mora imati bar 5 karaktera")
@@ -123,7 +121,7 @@ $(document).ready(function() {
         localStorage.setItem("users", JSON.stringify(users))
         sessionStorage.setItem("loggedUser", JSON.stringify(user))
 
-        $("#register-login").hide()
+        $(".register-login").hide()
         window.location.href = "index.html"
     })
 
