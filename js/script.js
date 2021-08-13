@@ -27,19 +27,13 @@ $(document).ready(function() {
     }
 
     if (sessionStorage.getItem("loggedUser") != "" && sessionStorage.getItem("loggedUser") != null) {
-        // let username = JSON.parse(sessionStorage.getItem("loggedUser")).username
-        // $(".navbar-nav>li:nth-child(2)").after("<a href='user-profile.html' class='nav-item nav-link'>Moj nalog</a>")     
-        // $(".navbar-nav>li:nth-child(2)").after("<a href='add-recipe.html' class='nav-item nav-link'>Dodaj recept</a>")
-        // $(".navbar-nav>li:nth-child(6)").after("<button class='btn btn-outline-danger log-out-btn'>Odjavi se</button>")
         $(".register-login").hide()
 
-        $(".navbar-nav").append("<a href='add-recipe.html' class='nav-item nav-link'>Dodaj recept</a>")
-        $(".navbar-nav").append("<a href='user-profile.html' class='nav-item nav-link'>Moj nalog</a>")
-        $(".navbar-nav").append("<button class='btn btn-outline-danger log-out-btn'>Odjavi se</button>")
-        //$(".welcome").html(name+",<div id='welcome'></div>");
+        $(".navbar-nav").html("<a href='index.html' class='nav-item nav-link active'>Početna</a>"+"<a href='menu.html' class='nav-item nav-link'>Recepti</a>"+"<a href='add-recipe.html' class='nav-item nav-link'>Dodaj recept</a>"+"<a href='user-profile.html' class='nav-item nav-link'>Moj nalog</a>"+"<div class='nav-item dropdown'><a href='#' class='nav-link dropdown-toggle' data-toggle='dropdown'>Jezik</a><div class='dropdown-menu'><a href='blog.html' class='dropdown-item'>Srpski</a><a href='single.html' class='dropdown-item'>Engleski</a></div></div>"+"<a href='about.html' class='nav-item nav-link'>O nama</a>"+"<button class='btn btn-outline-danger log-out-btn'>Odjavi se</button>")
     } 
     else {
         $(".register-login").show()
+        $(".navbar-nav").html("<a href='index.html' class='nav-item nav-link active'>Početna</a>"+"<a href='menu.html' class='nav-item nav-link'>Recepti</a>"+"<div class='nav-item dropdown'><a href='#' class='nav-link dropdown-toggle' data-toggle='dropdown'>Jezik</a><div class='dropdown-menu'><a href='blog.html' class='dropdown-item'>Srpski</a><a href='single.html' class='dropdown-item'>Engleski</a></div></div>"+"<a href='about.html' class='nav-item nav-link'>O nama</a>")
     }
 
 
