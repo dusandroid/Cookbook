@@ -35,6 +35,10 @@
     text-align: center;
 }
 
+.errors{
+  color:red;
+}
+
 
 
 /*=========== Search bar Start ==============*/

@@ -468,31 +468,30 @@ a:focus {
 /*******************************/
 /********* Booking CSS *********/
 /*******************************/
-.booking {
+.reg-log {
     position: relative;
     width: 100%;
-    margin-bottom: 45px;
     background: rgba(0, 0, 0, .04);
 }
 
-.booking .booking-content {
+.reg-log .reg-log-content {
     padding: 45px 0 15px 0;
 }
 
-.booking .booking-content .section-header {
+.reg-log .reg-log-content .section-header {
     margin-bottom: 30px;
 }
 
-.booking .booking-form {
+.reg-log .reg-log-form {
     padding: 60px 30px;
     background: #fbaf32;
 }
 
-.booking .booking-form .control-group {
+.reg-log .reg-log-form .control-group {
     margin-bottom: 15px;
 }
 
-.booking .booking-form .input-group-text {
+.reg-log .reg-log-form .input-group-text {
     position: absolute;
     padding: 0;
     border: none;
@@ -503,7 +502,7 @@ a:focus {
     font-size: 14px;
 }
 
-.booking .booking-form .form-control {
+.reg-log .reg-log-form .form-control {
     height: 45px;
     font-size: 14px;
     color: #ffffff;
@@ -513,32 +512,32 @@ a:focus {
     background: transparent;
 }
 
-.booking .booking-form select.form-control {
+.reg-log .reg-log-form select.form-control {
     padding: 0 10px;
 }
 
-.booking .booking-form .form-control::placeholder {
+.reg-log .reg-log-form .form-control::placeholder {
     color: #ffffff;
     opacity: 1;
 }
 
-.booking .booking-form .form-control:-ms-input-placeholder,
-.booking .booking-form .form-control::-ms-input-placeholder {
+.reg-log .reg-log-form .form-control:-ms-input-placeholder,
+.reg-log .reg-log-form .form-control::-ms-input-placeholder {
     color: #ffffff;
 }
 
-.booking .booking-form .input-group [data-toggle="datetimepicker"] {
+.reg-log .reg-log-form .input-group [data-toggle="datetimepicker"] {
     cursor: default;
 }
 
-.booking .booking-form .btn.custom-btn {
+.reg-log .reg-log-form .btn.custom-btn {
     width: 100%;
     color: #fbaf32;
     background: #ffffff;
     border: 1px solid #ffffff;
 }
 
-.booking .booking-form .btn.custom-btn:hover {
+.reg-log .reg-log-form .btn.custom-btn:hover {
     color: #ffffff;
     background: transparent;
 }
