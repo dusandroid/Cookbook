@@ -640,8 +640,8 @@
         <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="login-modal-label" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                    <div class="booking">
-                        <div class="booking-form">
+                    <div class="reg-log">
+                        <div class="reg-log-form">
                             <div class="modal-header">
                                 <h3 class="modal-title" id="log-modal">Prijava</h3>
                                 <button type="button" class="close close-modal" data-dismiss="modal" aria-label="Close">
@@ -649,15 +649,15 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <form id="login-form">
+                                <form>
                                     <div class="control-group">
                                         <div class="input-group">
                                             <input type="text" class="form-control" id="login-username" placeholder="Korisničko ime" />
                                             <div class="input-group-append">
                                                 <div class="input-group-text"><i class="far fa-user"></i></div>
                                             </div>
-                                            <div class="help-block with-errors" id="uerror"></div>
                                         </div>
+                                        <div class="errors" id="log-username-error"></div>
                                     </div>
                                     <div class="control-group">
                                         <div class="input-group">
@@ -667,7 +667,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="help-block with-errors" id="perror"></div>
+                                    <div class="help-block with-errors" id="log-pass-error"></div>
                                     <div>
                                         <button class="btn custom-btn" id="login-submit">Potvrdi</button>
                                     </div>
@@ -684,8 +684,8 @@
         <div class="modal fade" id="register-modal" tabindex="-1" role="dialog" aria-labelledby="register-modal-label" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
-                    <div class="booking">
-                        <div class="booking-form">
+                    <div class="reg-log">
+                        <div class="reg-log-form">
                             <div class="modal-header">
                                 <h3 class="modal-title" id="reg-modal">Registracija</h5>
                                 <button type="button" class="close close-modal" data-dismiss="modal" aria-label="Close">
@@ -693,15 +693,15 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <form id="register-form">
+                                <form>
                                     <div class="control-group">
                                         <div class="input-group">
                                             <input type="text" class="form-control" id="register-username" placeholder="Korisničko ime" />
                                             <div class="input-group-append">
                                                 <div class="input-group-text"><i class="far fa-user"></i></div>
                                             </div>
-                                            <div class="help-block with-errors" id="reg-username-error"></div>
                                         </div>
+                                        <div class="errors" id="reg-username-error"></div>
                                     </div>
                                     <div class="control-group">
                                         <div class="input-group">
@@ -709,8 +709,8 @@
                                             <div class="input-group-append">
                                                 <div class="input-group-text"><i class="far fa-envelope"></i></div>
                                             </div>
-                                            <div class="help-block with-errors" id="reg-email-error"></div>
                                         </div>
+                                        <div class="errors" id="reg-email-error"></div>
                                     </div>
                                     <div class="control-group">
                                         <div class="input-group">
@@ -719,6 +719,7 @@
                                                 <div class="input-group-text"><i class="fa fa-key"></i></div>
                                             </div>
                                         </div>
+                                        <div class="errors" id="reg-pass-error"></div>
                                     </div>
                                     <div class="control-group">
                                         <div class="input-group">
@@ -726,11 +727,11 @@
                                             <div class="input-group-append">
                                                 <div class="input-group-text"><i class="fa fa-key"></i></div>
                                             </div>
-                                            <div class="help-block with-errors" id="reg-conf-pass-error"></div>
                                         </div>
+                                        <div class="errors" id="reg-conf-pass-error"></div>
                                     </div>
                                     <div>
-                                        <button class="btn custom-btn" id="register-submit" type="submit">Potvrdi</button>
+                                        <button class="btn custom-btn" id="register-submit">Potvrdi</button>
                                     </div>
                                 </form>
                             </div>

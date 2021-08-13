@@ -34,40 +34,9 @@ $(document).ready(function() {
         $(".register-login").hide()
         //$(".welcome").html(name+",<div id='welcome'></div>");
     } 
-
-    // let registerForm = $("#register-form")
-    // if (registerForm.length) {
-    //     registerForm.validate({
-    //         rules: {
-    //             'register-username' : {
-    //                 required : true
-    //             },
-    //             'register-email' : {
-
-    //             },
-    //             'register-pass' : {
-    //                 required : true
-    //             },
-    //             'register-conf-pass' : {
-    //                 required : true
-    //             }
-    //         },
-    //         messages: {
-    //             'register-username' : {
-    //                 required : 'Korisničko ime mora biti popunjeno'
-    //             },
-    //             'register-email' : {
-    //                 required : 'Email adresa mora biti popunjena'
-    //             },
-    //             'register-pass' : {
-    //                 required : 'Lozinka mora biti popunjena'
-    //             },
-    //             'register-conf-pass' : {
-    //                 required : 'Lozinka mora biti potvrđena'
-    //             },
-    //         }
-    //     })
-    // }
+    else {
+        $(".register-login").show()
+    }
 
 
     $("#login-submit").click(function() {
@@ -92,6 +61,7 @@ $(document).ready(function() {
     $("#register-submit").click(function() {
         $("#reg-username-error").text("")
         $("#reg-email-error").text("")
+        $("#reg-pass-error").text("")
         $("#reg-conf-pass-error").text("")
 
         let username = $("#register-username").val()
@@ -99,20 +69,52 @@ $(document).ready(function() {
         let password = $("#register-pass").val()
         let confPassword = $("#register-conf-pass").val()
 
-        let users = JSON.parse(localStorage.getItem("users"))
+        let ret = false
 
+
+        if (username.length < 5) {
+            $("#reg-username-error").text("Korisničko ime mora imati bar 5 karaktera")
+            ret = true
+        }
+        var regexEmail = /\S+@\S+\.\S+/;
+        if (regexEmail.test(email) == false) {
+            $("#reg-email-error").text("Email nije u ispravnom formatu")
+            ret = true
+        }
+        if (password.length < 8) {
+            $("#reg-pass-error").text("Lozinka mora imati bar 8 karaktera")
+            ret = true
+        }
         if (users.find(user=>user.username == username) != null) {
-            $("#register-username").text("Korisničko ime već postoji")
-            return
+            $("#reg-username-error").text("Korisničko ime već postoji")
+            ret = true
         }
         if (users.find(user=>user.email == email) != null) {
-            $("#register-email").text("Email već postoji")
-            return
+            $("#reg-email-error").text("Email već postoji")
+            ret = true
         }
         if (password != confPassword) {
             $("#reg-conf-pass-error").text("Lozinke se ne poklapaju")
-            return
+            ret = true
         }
+        if (username == "") {
+            $("#reg-username-error").text("Niste uneli korisničko ime")
+            ret = true
+        }
+        if (email == "") {
+            $("#reg-email-error").text("Niste uneli email")
+            ret = true
+        }
+        if (password == "") {
+            $("#reg-pass-error").text("Niste uneli lozinku")
+            ret = true
+        }
+        if (confPassword == "") {
+            $("#reg-conf-pass-error").text("Niste potvrdili lozinku")
+            ret = true
+        }
+
+        if (ret == true) return false
 
         let user = {
             username : username,
