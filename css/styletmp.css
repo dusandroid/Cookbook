@@ -213,3 +213,13 @@
     flex-direction: row;
     justify-content: space-between;
 }
+
+
+
+/*******************************/
+/********* Rating CSS *********/
+/*******************************/
+
+.with-errors {
+    margin-bottom: 15px;
+}
