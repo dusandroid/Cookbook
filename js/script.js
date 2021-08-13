@@ -44,8 +44,6 @@ $(document).ready(function() {
 
 
     $("#login-submit").click(function() {
-        $("#log-error").text("")
-
         let username = $("#login-username").val()
         let password = $("#login-pass").val()
 
@@ -64,11 +62,6 @@ $(document).ready(function() {
 
 
     $("#register-submit").click(function() {
-        $("#reg-username-error").text("")
-        $("#reg-email-error").text("")
-        $("#reg-pass-error").text("")
-        $("#reg-conf-pass-error").text("")
-
         let username = $("#register-username").val()
         let email = $("#register-email").val()
         let password = $("#register-pass").val()
