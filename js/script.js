@@ -28,7 +28,6 @@ $(document).ready(function() {
 
     if (sessionStorage.getItem("loggedUser") != "" && sessionStorage.getItem("loggedUser") != null) {
         $(".register-login").hide()
-
         $(".navbar-nav").html("<a href='index.html' class='nav-item nav-link active'>Početna</a>"+"<a href='menu.html' class='nav-item nav-link'>Recepti</a>"+"<a href='add-recipe.html' class='nav-item nav-link'>Dodaj recept</a>"+"<a href='user-profile.html' class='nav-item nav-link'>Moj nalog</a>"+"<div class='nav-item dropdown'><a href='#' class='nav-link dropdown-toggle' data-toggle='dropdown'>Jezik</a><div class='dropdown-menu'><a href='blog.html' class='dropdown-item'>Srpski</a><a href='single.html' class='dropdown-item'>Engleski</a></div></div>"+"<a href='about.html' class='nav-item nav-link'>O nama</a>"+"<button class='btn btn-outline-danger log-out-btn'>Odjavi se</button>")
     } 
     else {
@@ -49,7 +48,7 @@ $(document).ready(function() {
         }
         sessionStorage.setItem("loggedUser", JSON.stringify(currUser))
 
-        $("#register-login").hide()
+        $(".register-login").hide()
         window.location.href = "index.html"
     })
 
@@ -62,7 +61,6 @@ $(document).ready(function() {
         let confPassword = $("#register-conf-pass").val()
 
         let ret = false
-
 
         if (username.length < 5) {
             $("#reg-username-error").text("Korisničko ime mora imati bar 5 karaktera")
@@ -121,7 +119,7 @@ $(document).ready(function() {
         localStorage.setItem("users", JSON.stringify(users))
         sessionStorage.setItem("loggedUser", JSON.stringify(user))
 
-        $("#register-login").hide()
+        $(".register-login").hide()
         window.location.href = "index.html"
     })
 
