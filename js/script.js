@@ -20,14 +20,14 @@ $(document).ready(function() {
 
     if(localStorage.getItem("users") == null) {
         localStorage.setItem("users", JSON.stringify(users))
-        localStorage.setItem("loggedUser", "")
+        sessionStorage.setItem("loggedUser", "")
     }
     else {
         users = JSON.parse(localStorage.getItem("users"))
     }
 
-    if (localStorage.getItem("loggedUser") != "" && localStorage.getItem("loggedUser") != null) {
-        let username = JSON.parse(localStorage.getItem("loggedUser")).username
+    if (sessionStorage.getItem("loggedUser") != "" && sessionStorage.getItem("loggedUser") != null) {
+        let username = JSON.parse(sessionStorage.getItem("loggedUser")).username
         $(".navbar-nav>li:nth-child(2)").after("<a href='user-profile.html' class='nav-item nav-link'>Moj nalog</a>")     
         $(".navbar-nav>li:nth-child(2)").after("<a href='add-recipe.html' class='nav-item nav-link'>Dodaj recept</a>")
         $(".navbar-nav>li:nth-child(6)").after("<button class='btn btn-outline-danger log-out-btn'>Odjavi se</button>")
@@ -35,43 +35,56 @@ $(document).ready(function() {
         //$(".welcome").html(name+",<div id='welcome'></div>");
     } 
 
-    let registerForm = $("#register-form")
-    if (registerForm.length) {
-        registerForm.validate({
-            rules: {
-                'register-username' : {
-                    required : true
-                },
-                'register-email' : {
+    // let registerForm = $("#register-form")
+    // if (registerForm.length) {
+    //     registerForm.validate({
+    //         rules: {
+    //             'register-username' : {
+    //                 required : true
+    //             },
+    //             'register-email' : {
 
-                },
-                'register-pass' : {
-                    required : true
-                },
-                'register-conf-pass' : {
-                    required : true
-                }
-            },
-            messages: {
-                'register-username' : {
-                    required : 'Korisničko ime mora biti popunjeno'
-                },
-                'register-email' : {
-                    required : 'Email adresa mora biti popunjena'
-                },
-                'register-pass' : {
-                    required : 'Lozinka mora biti popunjena'
-                },
-                'register-conf-pass' : {
-                    required : 'Lozinka mora biti potvrđena'
-                },
-            }
-        })
-    }
+    //             },
+    //             'register-pass' : {
+    //                 required : true
+    //             },
+    //             'register-conf-pass' : {
+    //                 required : true
+    //             }
+    //         },
+    //         messages: {
+    //             'register-username' : {
+    //                 required : 'Korisničko ime mora biti popunjeno'
+    //             },
+    //             'register-email' : {
+    //                 required : 'Email adresa mora biti popunjena'
+    //             },
+    //             'register-pass' : {
+    //                 required : 'Lozinka mora biti popunjena'
+    //             },
+    //             'register-conf-pass' : {
+    //                 required : 'Lozinka mora biti potvrđena'
+    //             },
+    //         }
+    //     })
+    // }
 
 
     $("#login-submit").click(function() {
-        
+        let username = $("#login-username").val()
+        let password = $("#login-pass").val()
+
+        let users = JSON.parse(localStorage.getItem("users"))
+        let currUser = users.find(user=>user.username == username)
+
+        if (currUser == null || currUser.password != password) {
+            $("#perror").text("Podaci nisu ispravno uneti")
+            return false
+        }
+        sessionStorage.setItem("loggedUser", JSON.stringify(currUser))
+
+        $("#register-login").hide()
+        window.location.href = "index.html"
     })
 
 
@@ -112,10 +125,10 @@ $(document).ready(function() {
 
         users.push(user)
         localStorage.setItem("users", JSON.stringify(users))
-        localStorage.setItem("loggedUser", JSON.stringify(user))
+        sessionStorage.setItem("loggedUser", JSON.stringify(user))
 
         $("#register-login").hide()
-        window.location.href="index.html";
+        window.location.href = "index.html"
     })
 
 })
