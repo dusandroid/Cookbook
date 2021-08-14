@@ -83,13 +83,13 @@
                     <form>
                         <div class="control-group">
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Naziv jela" required="required" />
+                                <input type="text" class="form-control" placeholder="Naziv jela" required="required" id="add-recipe-name" />
                                 <div class="help-block with-errors" id="nerror-reg"></div>
                             </div>
                         </div>
                         <div class="control-group">
                             <div class="input-group">
-                                <select class="form-control recipe-group" required="required"> 
+                                <select class="form-control recipe-group" required="required" id="add-recipe-group"> 
                                     <option class="select-color" selected="selected" value="" disabled>Grupa recepata</option>
                                     <option class="select-color" value="predjelo">Predjelo</option>
                                     <option class="select-color" value="glavno jelo">Glavno jelo</option>
@@ -97,15 +97,15 @@
                                     <option class="select-color" value="uzina">Užina</option>
                                 </select>
                                 <!-- <input type="email" class="form-control recipe-group" placeholder="Grupa recepata" required="required" /> -->
-                                <input type="number" class="form-control" placeholder="Težina pripreme" required="required" min="1" max="5" />
+                                <input type="number" class="form-control" placeholder="Težina pripreme" required="required" min="1" max="5" id="add-recipe-difficulty"/>
                                 <div class="help-block with-errors" id="uerror-reg"></div>
                             </div>
                         </div>
                         <div class="control-group">
                             <div class="input-group">
                                 <label for="" class="form-label">Trajanje:</label>
-                                <input type="number" class="form-control duration-hours" placeholder="Sati" required="required" min="0" max="23"/>
-                                <input type="number" class="form-control" placeholder="Minuti" required="required"  min="0" max="59"/>
+                                <input type="number" class="form-control duration-hours" placeholder="Sati" required="required" min="0" max="23" id="add-recipe-hours"/>
+                                <input type="number" class="form-control" placeholder="Minuti" required="required"  min="0" max="59" id="add-recipe-minutes"/>
                                 <div class="help-block with-errors" id="perror-reg"></div>
                             </div>
                         </div>
@@ -113,19 +113,19 @@
                             <div class="input-group">
                                 <label for="" class="form-label">Izaberite sliku:</label>
                                 <input type="file" id="choose-file" accept="image/*">
-                                <input type="text" class="form-control" placeholder="URL ka videu" required="required" />
+                                <input type="text" class="form-control" placeholder="URL ka videu" required="required" id="add-recipe-url"/>
                                 <div class="help-block with-errors" id="nerror-reg"></div>
                             </div>
                         </div>
                         <label for="" class="form-label">Uputstvo za pripremu:</label>
                         <div class="control-group">
                             <div class="input-group">
-                                <textarea class="form-control" placeholder="" required="required" rows="10"></textarea>
+                                <textarea class="form-control" placeholder="" required="required" rows="10" id="add-recipe-instructions"></textarea>
                                 <div class="help-block with-errors" id="cperror-reg"></div>
                             </div>
                         </div>
                         <div>
-                            <button class="btn custom-btn" type="submit">Potvrdi</button>
+                            <button class="btn custom-btn" type="submit" id="add-recipe">Potvrdi</button>
                         </div>
                     </form>
             </div>
