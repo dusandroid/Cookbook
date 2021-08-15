@@ -166,10 +166,25 @@ $(document).ready(function() {
         ]
         localStorage.setItem("users", JSON.stringify(users))
         sessionStorage.setItem("loggedUser", "")
+
+        let recipes = []
+        for (let i = 0; i < users.length; ++i) {
+            for (let ii = 0; ii < users[i].recipes.length; ++ii) {
+                recipes.push(users[i].recipes[ii])
+            }
+        }
+        localStorage.setItem("recipes", JSON.stringify(recipes))
+
+        let currCom = {
+            id : 1
+        }
+        localStorage.setItem("currCommentId", JSON.stringify(currCom))
     }
     else {
         users = JSON.parse(localStorage.getItem("users"))
     }
+
+    
 
     if (sessionStorage.getItem("loggedUser") != "" && sessionStorage.getItem("loggedUser") != null) {
         $(".register-login").hide()
@@ -276,4 +291,3 @@ $(document).ready(function() {
         $("#reg-conf-pass-error").text("")
     })
 })
-

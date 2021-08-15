@@ -24,7 +24,7 @@
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
         <link href="css/styletmp.css" rel="stylesheet">
-
+        <link href="css/styledusan.css" rel="stylesheet">
     </head>
 
     <body>
@@ -68,10 +68,9 @@
                         <h2>Recept</h2>
                     </div>
                     <div class="col-12">
-                        <a href="">Početna</a>
-                        <a href="">Recepti</a>
-                        <a href="">Kategorija</a>
-                        <a href="">Recept</a>
+                        <a href="index.html">Početna</a>
+                        <a href="menu.html">Recepti</a>
+                        <a href="" class="recipe-name"></a>
                     </div>
                 </div>
             </div>
@@ -85,69 +84,23 @@
                 <div class="row">
                     <div class="col-lg-8">
                         <div class="single-content">
-                            <img src="img/single.jpg" />
-                            <h2>Lorem ipsum dolor sit amet</h2>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer molestie, lorem eu eleifend bibendum, augue purus mollis sapien, non rhoncus eros leo in nunc. Donec a nulla vel turpis consectetur tempor ac vel justo. In hac habitasse platea dictumst. Cras nec sollicitudin eros. Nunc eu enim non turpis sagittis rhoncus consectetur id augue. Mauris dignissim neque felis. Phasellus mollis mi a pharetra cursus. Maecenas vulputate augue placerat lacus mattis, nec ornare risus sollicitudin.
-                            </p>
-                            <p>
-                                Mauris eu pulvinar tellus, eu luctus nisl. Pellentesque suscipit mi eu varius pulvinar. Aenean vulputate, massa eget elementum finibus, ipsum arcu commodo est, ut mattis eros orci ac risus. Suspendisse ornare, massa in feugiat facilisis, eros nisl auctor lacus, laoreet tempus elit dolor eu lorem. Nunc a arcu suscipit, suscipit quam quis, semper augue.
-                            </p>
-                            <p>
-                                Quisque arcu nulla, convallis nec orci vel, suscipit elementum odio. Curabitur volutpat velit non diam tincidunt sodales. Nullam sapien libero, bibendum nec viverra in, iaculis ut eros.
-                            </p>
-                            <h4>Lorem ipsum dolor sit amet</h4>
-                            <p>
-                                Praesent ultricies, mauris eget vestibulum viverra, neque lorem malesuada mauris, eget rhoncus lectus enim a lorem. Vivamus at vehicula risus, eget facilisis massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et posuere sapien. Fusce bibendum lorem sem, quis tincidunt felis mattis nec.
-                            </p>
-                            <p>
-                                Proin vel nulla purus. Nunc nec eros in nisi efficitur rutrum quis sed eros. Mauris felis dolor, rhoncus eget gravida vitae, pretium vel arcu. Cras blandit tellus eget tellus dictum venenatis. Sed ultricies bibendum dictum. Etiam facilisis erat id turpis tincidunt malesuada. Duis bibendum sapien eu condimentum sagittis. Proin nunc lorem, ullamcorper vel tortor sodales, imperdiet lacinia dui. Sed congue, felis id rhoncus varius, urna lacus imperdiet nunc, ut porttitor mauris mi quis mi. Integer rutrum est finibus metus eleifend scelerisque. Morbi auctor dignissim purus in interdum. Vestibulum eu dictum enim. Suspendisse et sem vitae velit feugiat facilisis.
-                            </p>
-                            <p>
-                                Nam sodales scelerisque nunc sed convallis. Vestibulum facilisis porta erat, sit amet pharetra tortor blandit id. Nunc velit tellus, consectetur sed convallis in, tincidunt finibus nulla. Integer vel ex in mauris tincidunt tincidunt nec sed elit. Etiam pretium lectus lectus, sed aliquet erat tristique euismod. Praesent faucibus nisl augue, ac tempus libero pellentesque malesuada. Vivamus iaculis imperdiet laoreet. Aliquam vel felis felis. Proin sed sapien erat. Etiam a quam et metus tempor rutrum. Curabitur in faucibus justo. Etiam imperdiet iaculis urna.
-                            </p>
-                        </div>
-                        <div class="single-bio">
-                            <div class="single-bio-img">
-                                <img src="img/user.jpg" />
-                            </div>
-                            <div class="single-bio-text">
-                                <h3>Author Name</h3>
-                                <p>
-                                    Lorem ipsum dolor sit amet elit. Integer lorem augue purus mollis sapien, non eros leo in nunc. Donec a nulla vel turpis tempor ac vel justo. In hac platea dictumst.
-                                </p>
-                            </div>
+                            <iframe src="" id="recipe-video" frameborder="0" allowfullscreen width="600" height="350"></iframe>
+                            <h2 class="recipe-name"></h2>
+                            <p id="recipe-instructions"></p>
                         </div>
                         
                         <div class="single-comment">
-                            <h2>3 Comments</h2>
+                            <h2 id="recipe-comments"></h2>
                             <ul class="comment-list">
-                                <li class="comment-item">
+                                <!-- <li class="comment-item">
                                     <div class="comment-body">
                                         <div class="comment-img">
                                             <img src="img/user.jpg" />
                                         </div>
                                         <div class="comment-text">
-                                            <h3><a href="">Josh Dunn</a></h3>
-                                            <span>01 Jan 2045 at 12:00pm</span>
-                                            <p>
-                                                Lorem ipsum dolor sit amet elit. Integer lorem augue purus mollis sapien, non eros leo in nunc. Donec a nulla vel turpis tempor ac vel justo. In hac platea dictumst. 
-                                            </p>
-                                            <a class="btn" href="">Reply</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="comment-item">
-                                    <div class="comment-body">
-                                        <div class="comment-img">
-                                            <img src="img/user.jpg" />
-                                        </div>
-                                        <div class="comment-text">
-                                            <h3><a href="">Josh Dunn</a></h3>
-                                            <p><span>01 Jan 2045 at 12:00pm</span></p>
-                                            <p>
-                                                Lorem ipsum dolor sit amet elit. Integer lorem augue purus mollis sapien, non eros leo in nunc. Donec a nulla vel turpis tempor ac vel justo. In hac platea dictumst. 
-                                            </p>
+                                            <h3 id="recipe-comment-author"></h3>
+                                            <p><span id="recipe-comment-date">Format: 01 Jan 2045 at 12:00pm</span></p>
+                                            <p></p>
                                             <a class="btn" href="">Reply</a>
                                         </div>
                                     </div>
@@ -168,7 +121,7 @@
                                             </div>
                                         </li>
                                     </ul>
-                                </li>
+                                </li> -->
                             </ul>
                         </div>
                         <div class="comment-form">
@@ -177,21 +130,22 @@
                                 <div class="form-group">
                                     <textarea id="message" cols="30" rows="5" class="form-control"></textarea>
                                 </div>
+                                <div class="errors" id="msg-empty-error"></div>
                                 <div id="rating-submit">
                                     <div class="rate">
-                                        <input type="radio" id="star5" name="rate" value="5" />
+                                        <input type="radio" id="star5" class="rate" name="rate" value="5" />
                                         <label for="star5" title="text">5 stars</label>
-                                        <input type="radio" id="star4" name="rate" value="4" />
+                                        <input type="radio" class="rate" id="star4" name="rate" value="4" />
                                         <label for="star4" title="text">4 stars</label>
-                                        <input type="radio" id="star3" name="rate" value="3" />
+                                        <input type="radio" class="rate" id="star3" name="rate" value="3" />
                                         <label for="star3" title="text">3 stars</label>
-                                        <input type="radio" id="star2" name="rate" value="2" />
+                                        <input type="radio" class="rate" id="star2" name="rate" value="2" />
                                         <label for="star2" title="text">2 stars</label>
-                                        <input type="radio" id="star1" name="rate" value="1" />
+                                        <input type="radio" class="rate" id="star1" name="rate" value="1" />
                                         <label for="star1" title="text">1 star</label>
                                     </div>
                                     <div class="form-group">
-                                        <input type="submit" value="Postavi" class="btn custom-btn">
+                                        <a class="btn custom-btn" id="comment-submit">Postavi</a>
                                     </div>
                                 </div>
                             </form>
@@ -200,17 +154,17 @@
 
                     <div class="col-lg-4">
                         <div class="sidebar">
-                           
                             <div class="sidebar-widget">
                                 <div class="image-widget">
-                                    <a href="#"><img src="img/blog-1.jpg" alt="Image"></a>
+                                    <a href="#"><img src="" alt="Image" id="recipe-img"></a>
                                 </div>
                             </div>
 
                             <div class="sidebar-widget">
-                                <h2 class="widget-title">Tezina:&nbsp;&nbsp;3</h2>
-                                <h2 class="widget-title">Vreme:&nbsp;&nbsp;1:45</h2>
-                                <h2 class="widget-title">Ocena:&nbsp;&nbsp;2,5</h2>
+                                <h2 class="widget-title recipe-author"></h2>
+                                <h2 class="widget-title recipe-difficulty"></h2>
+                                <h2 class="widget-title recipe-time"></h2>
+                                <h2 class="widget-title recipe-mark"></h2>
                             </div>
                         </div>
                     </div>
@@ -248,5 +202,6 @@
 
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
+        <script src="js/recipe-single.js"></script>
     </body>
 </html>
