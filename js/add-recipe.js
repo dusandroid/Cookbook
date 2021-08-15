@@ -1,4 +1,10 @@
 $(document).ready(function() {
+
+    if(sessionStorage.getItem("loggedUser") == "" || sessionStorage.getItem("loggedUser") == null){
+        window.location.href = "index.html"
+        return
+    }
+
     let users
     if(localStorage.getItem("users") == null) {
         users = [
@@ -171,109 +177,109 @@ $(document).ready(function() {
         users = JSON.parse(localStorage.getItem("users"))
     }
 
-    if (sessionStorage.getItem("loggedUser") != "" && sessionStorage.getItem("loggedUser") != null) {
-        $(".register-login").hide()
-        $(".navbar-nav").html("<a href='index.html' class='nav-item nav-link active'>Početna</a>"+"<a href='menu.html' class='nav-item nav-link'>Recepti</a>"+"<a href='add-recipe.html' class='nav-item nav-link'>Dodaj recept</a>"+"<a href='user-profile.html' class='nav-item nav-link'>Moj nalog</a>"+"<div class='nav-item dropdown'><a href='#' class='nav-link dropdown-toggle' data-toggle='dropdown'>Jezik</a><div class='dropdown-menu'><a href='blog.html' class='dropdown-item'>Srpski</a><a href='single.html' class='dropdown-item'>Engleski</a></div></div>"+"<a href='about.html' class='nav-item nav-link'>O nama</a>"+"<button class='btn btn-outline-danger log-out-btn'>Odjavi se</button>")
-    } 
+    let currId
+    if(localStorage.getItem("currId") == null) {
+        currId = 13
+        localStorage.setItem("currId", JSON.stringify(currId))
+    }
     else {
-        $(".register-login").show()
-        $(".navbar-nav").html("<a href='index.html' class='nav-item nav-link active'>Početna</a>"+"<a href='menu.html' class='nav-item nav-link'>Recepti</a>"+"<div class='nav-item dropdown'><a href='#' class='nav-link dropdown-toggle' data-toggle='dropdown'>Jezik</a><div class='dropdown-menu'><a href='blog.html' class='dropdown-item'>Srpski</a><a href='single.html' class='dropdown-item'>Engleski</a></div></div>"+"<a href='about.html' class='nav-item nav-link'>O nama</a>")
+        currId = JSON.parse(localStorage.getItem("currId"))
     }
 
-
-    $("#login-submit").click(function() {
-        let username = $("#login-username").val()
-        let password = $("#login-pass").val()
-
-        let currUser = users.find(user=>user.username == username)
-
-        if (currUser == null || currUser.password != password) {
-            $("#log-error").text("Podaci nisu ispravno uneti")
-            return false
-        }
-        sessionStorage.setItem("loggedUser", JSON.stringify(currUser))
-
-        $(".register-login").hide()
-        window.location.href = "index.html"
-    })
+    // if (sessionStorage.getItem("loggedUser") != "" && sessionStorage.getItem("loggedUser") != null) {
+    //     $(".navbar-nav").html("<a href='index.html' class='nav-item nav-link active'>Početna</a>"+"<a href='menu.html' class='nav-item nav-link'>Recepti</a>"+"<a href='add-recipe.html' class='nav-item nav-link'>Dodaj recept</a>"+"<a href='user-profile.html' class='nav-item nav-link'>Moj nalog</a>"+"<div class='nav-item dropdown'><a href='#' class='nav-link dropdown-toggle' data-toggle='dropdown'>Jezik</a><div class='dropdown-menu'><a href='blog.html' class='dropdown-item'>Srpski</a><a href='single.html' class='dropdown-item'>Engleski</a></div></div>"+"<a href='about.html' class='nav-item nav-link'>O nama</a>"+"<button class='btn btn-outline-danger log-out-btn'>Odjavi se</button>")
+    // } 
+    // else {
+    //     $(".register-login").show()
+    //     $(".navbar-nav").html("<a href='index.html' class='nav-item nav-link active'>Početna</a>"+"<a href='menu.html' class='nav-item nav-link'>Recepti</a>"+"<div class='nav-item dropdown'><a href='#' class='nav-link dropdown-toggle' data-toggle='dropdown'>Jezik</a><div class='dropdown-menu'><a href='blog.html' class='dropdown-item'>Srpski</a><a href='single.html' class='dropdown-item'>Engleski</a></div></div>"+"<a href='about.html' class='nav-item nav-link'>O nama</a>")
+    // }
 
 
-
-    $("#register-submit").click(function() {
-        let username = $("#register-username").val()
-        let email = $("#register-email").val()
-        let password = $("#register-pass").val()
-        let confPassword = $("#register-conf-pass").val()
+    $("#add-recipe").click(function(){
+        let name = $("#add-recipe-name").val()
+        let group = $("#add-recipe-group").val()
+        let difficulty = $("#add-recipe-difficulty").val()
+        let hours = $("#add-recipe-hours").val()
+        let minutes = $("#add-recipe-minutes").val()
+        let img = $("#choose-file").val()
+        let videoUrl = $("#add-recipe-url").val()
+        let instructions = $("#add-recipe-instructions").val()
 
         let ret = false
 
-        if (username.length < 5) {
-            $("#reg-username-error").text("Korisničko ime mora imati bar 5 karaktera")
+        if (name == "") {
+            $("#add-recipe-error-name").text("Niste uneli korisničko ime")
             ret = true
         }
-        var regexEmail = /\S+@\S+\.\S+/;
-        if (regexEmail.test(email) == false) {
-            $("#reg-email-error").text("Email nije u ispravnom formatu")
+        if (group == "" ){
+            $("#add-recipe-error-group").text("Niste uneli grupu")
             ret = true
         }
-        if (password.length < 8) {
-            $("#reg-pass-error").text("Lozinka mora imati bar 8 karaktera")
+        if (difficulty == ""){
+            $("#add-recipe-error-difficulty").text("Niste uneli tezinu")
             ret = true
         }
-        if (users.find(user=>user.username == username) != null) {
-            $("#reg-username-error").text("Korisničko ime već postoji")
+        else if(difficulty < 0 || difficulty > 5){
+            $("#add-recipe-error-difficulty").text("Niste ispravno uneli tezinu")
             ret = true
         }
-        if (users.find(user=>user.email == email) != null) {
-            $("#reg-email-error").text("Email već postoji")
+        if (hours == "" || minutes == "" || hours < 0 || minutes < 0 || minutes > 59){
+            $("#add-recipe-error-time").text("Niste ispravno uneli vreme")
             ret = true
         }
-        if (password != confPassword) {
-            $("#reg-conf-pass-error").text("Lozinke se ne poklapaju")
+        if (videoUrl == ""){
+            $("#add-recipe-error-url").text("Niste uneli video URL")
             ret = true
         }
-        if (username == "") {
-            $("#reg-username-error").text("Niste uneli korisničko ime")
-            ret = true
-        }
-        if (email == "") {
-            $("#reg-email-error").text("Niste uneli email")
-            ret = true
-        }
-        if (password == "") {
-            $("#reg-pass-error").text("Niste uneli lozinku")
-            ret = true
-        }
-        if (confPassword == "") {
-            $("#reg-conf-pass-error").text("Niste potvrdili lozinku")
+        if (instructions == ""){
+            $("#add-recipe-error-instructions").text("Niste uneli instrukcije")
             ret = true
         }
 
         if (ret == true) return false
 
-        let user = {
-            username : username,
-            email : email,
-            password : password,
-            recipes: [],
-            comments: [],
-            grades: []
+        let imgName
+        if (img == ""){
+            imgName = "img/recipes/default.jpg"
+        }
+        else {
+            imgName = "img/recipes/" + currId
         }
 
-        users.push(user)
+        if (!videoUrl.includes("embed")){
+            let str = url;
+            let first = str.split("=");
+            let second = first[1].split("&");
+            let embeddedUrl = "https://www.youtube.com/embed/" + second[0];
+            videoUrl = embeddedUrl;
+        }
+
+        let recipe = {
+            id : currId,
+            name : name,
+            group : group,
+            difficulty : difficulty,
+            hours : hours,
+            minutes : minutes,
+            img : imgName,
+            videoURL : videoUrl,
+            instructions: instructions
+        }
+
+        currId++;
+        localStorage.setItem("currId", JSON.stringify(currId))
+
+        let currUser = JSON.parse(sessionStorage.getItem("loggedUser"))
+        currUser["recipes"].push(recipe)
+        sessionStorage.setItem("loggedUser", JSON.stringify(currUser))
+
+        for(let i = 0; i < users.length; i++){
+            if(users[i].username == currUser.username){
+                users[i] = currUser
+                break;
+            }
+        }
         localStorage.setItem("users", JSON.stringify(users))
-        sessionStorage.setItem("loggedUser", JSON.stringify(user))
-
-        $(".register-login").hide()
-        window.location.href = "index.html"
-    })
-
-    $(".reg-log-btn").click(function() {
-        $("#log-error").text("")
-        $("#reg-username-error").text("")
-        $("#reg-email-error").text("")
-        $("#reg-pass-error").text("")
-        $("#reg-conf-pass-error").text("")
     })
 })
 
