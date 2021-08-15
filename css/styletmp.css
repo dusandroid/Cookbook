@@ -162,7 +162,15 @@
     color: #fff;
 }
 
-.recipe-group {
+.add-recipe .add-recipe-form #add-recipe-group-label {
+    margin-left: 15px;
+}
+
+.add-recipe .add-recipe-form #add-recipe-group {
+    margin-left: 15px;
+}
+
+#add-recipe-url {
     margin-right: 15px;
 }
 
