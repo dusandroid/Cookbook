@@ -264,24 +264,8 @@ $(document).ready(function() {
                                 "<a href='about.html' class='nav-item nav-link'>O nama</a>")
     }
 
-    let currPage
-    if(sessionStorage.getItem("currPage") == null) {
-        currPage = "index.html"
-        sessionStorage.setItem("currPage", currPage)
-    }
-    else {
-        currPage = sessionStorage.getItem("currPage")
-    }
-
+    let currPage = document.location.href.match(/[^\/]+$/)[0]
 
     $('a[href="' + currPage + '"]').addClass("active")
-
-    $(".nav-item").click(function() {
-        currPage = $(this).attr('href')
-        if (currPage) {
-            sessionStorage.setItem("currPage", currPage)
-        }
-    })
-
 
 })
