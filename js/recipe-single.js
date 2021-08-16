@@ -110,7 +110,7 @@ $(document).ready(function() {
                                 "</div>" + 
                             "</div>" +
                         "</li>"
-            $(".comment-list").html(commentSection)  
+            $(".comment-list").html(commentSection)
         }
         $("#message").val('')
         recipe.comments.length == 1 ? $("#recipe-comments").text("1 komentar") : $("#recipe-comments").text(recipe.comments.length + " komentara")
@@ -134,7 +134,7 @@ $(document).ready(function() {
                 break
             }
         }
-
+        
         if (prevVal == 0) {
             user.ratings.push(rtg)
             recipe.ratingSum += rtg.val
