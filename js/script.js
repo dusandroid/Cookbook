@@ -110,7 +110,7 @@ $(document).ready(function() {
                     {                    
                         id : 7,                    
                         name : "Watermelon Ice Pops",                    
-                        group : "4",                    
+                        group : "3",                    
                         difficulty : "1",                    
                         hours : "2",                    
                         minutes : "10",                    
@@ -179,7 +179,7 @@ $(document).ready(function() {
                     {
                         id : 11,
                         name : "Oatmeal Peanut Butter Chocolate Chip Bars",
-                        group : "4",
+                        group : "3",
                         difficulty : "1",
                         hours : "0",
                         minutes : "30",
