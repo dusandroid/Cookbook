@@ -15,6 +15,7 @@ $(document).ready(function() {
     }
 
 
+
     $("#add-recipe").click(function(){
         let name = $("#add-recipe-name").val()
         let group = $("#add-recipe-group").val()
@@ -63,7 +64,7 @@ $(document).ready(function() {
             imgName = "img/recipes/default.jpg"
         }
         else {
-            imgName = "img/recipes/" + currId
+            imgName = "img/recipes/" + img
         }
 
         if (!videoUrl.includes("embed")){
