@@ -1,10 +1,9 @@
 $(document).ready(function() {
     let recipes = JSON.parse(localStorage.getItem("recipes"))
-    let sort = null
     let sortPrev = null
 
     function sortRecipes() {
-        sort = $("select").val()
+        let sort = $("select").val()
         if (sort != null && (sort == sortPrev) == false) {
             for (let i = 0; i < recipes.length - 1; ++i) {
                 for (let ii = i + 1; ii < recipes.length; ++ii) {
@@ -34,14 +33,14 @@ $(document).ready(function() {
         }
     }
 
-    function showRecipes() {
+    function showRecipes(group) {
         sortRecipes()
 
-        let group = $(".menu-tab ul li a.active").attr("id")
-        
+        let regex = $("#search-query-input").val() == "" ? null : new RegExp("[...]*" + $("#search-query-input").val() + "[...]*", "i")
+
         let currRecipe = ""
         for (let i = 0; i < recipes.length; ++i) {
-            if (recipes[i].group == group || group == "all") {
+            if ((recipes[i].group == group || group == "all") && (regex == null || regex.test(recipes[i].name))) {
                 let rtg = recipes[i].ratingNum == 0 ? 0 : (recipes[i].ratingSum / recipes[i].ratingNum).toFixed(1)
 
                 currRecipe += "<div id='" + recipes[i].id + "' class='col-lg-4 col-md-6 special-grid recipes " + recipes[i].group + "'>" + 
@@ -55,7 +54,13 @@ $(document).ready(function() {
         $("#pics").html(currRecipe)
     }
 
-    showRecipes()
+    showRecipes("all")
+
+
+    // Search
+    $("#search-query-submit").click(function() {
+        showRecipes($(".menu-tab ul li a.active").attr("id"))
+    })
 
 
 
@@ -69,12 +74,12 @@ $(document).ready(function() {
 
     // Show certain food group
     $(".nav-link").click(function() {
-        showRecipes()
+        showRecipes($(this).attr("id"))
     })
 
 
     //Sort type change
     $("select").change(function() {
-        showRecipes()
+        showRecipes($(".menu-tab ul li a.active").attr("id"))
     })
 })
