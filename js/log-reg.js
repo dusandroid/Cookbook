@@ -95,10 +95,4 @@ $(document).ready(function() {
         $("#reg-pass-error").text("")
         $("#reg-conf-pass-error").text("")
     })
-
-
-    $(".log-out-btn").click(function() {
-        sessionStorage.setItem("loggedUser", "")
-        window.location.href = "index.html"
-    })
 })
