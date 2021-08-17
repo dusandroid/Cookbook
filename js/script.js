@@ -10,7 +10,7 @@ $(document).ready(function() {
                     {
                         id : 1,
                         name : "Salata sa piletinom",
-                        group : 1,
+                        group : "appetizer",
                         difficulty : 2,
                         hours : 0,
                         minutes : 30,
@@ -26,7 +26,7 @@ $(document).ready(function() {
                     {
                         id : 2,
                         name : "Riblji paprikaš",
-                        group : 2,
+                        group : "main-course",
                         difficulty : 4,
                         hours : 1,
                         minutes : 0,
@@ -41,7 +41,7 @@ $(document).ready(function() {
                     {
                         id : 3,
                         name : "Strawberry banana smoothie",
-                        group : 3,
+                        group : "dessert",
                         difficulty : 1,
                         hours : 0,
                         minutes : 5,
@@ -56,7 +56,7 @@ $(document).ready(function() {
                     {
                         id : 4,
                         name : "Čokoladni keksići",
-                        group : 4,
+                        group : "snack",
                         difficulty : 1,
                         hours : 0,
                         minutes : 15,
@@ -80,7 +80,7 @@ $(document).ready(function() {
                     {                    
                         id : 5,                    
                         name : "Pita sa spanaćem",                    
-                        group : 1,                    
+                        group : "appetizer",                    
                         difficulty : 2,                    
                         hours : 1,                    
                         minutes : 0,                    
@@ -95,7 +95,7 @@ $(document).ready(function() {
                     {                    
                         id : 6,                    
                         name : "Špagete sa tikvicama i slaninom",                    
-                        group : 2,                    
+                        group : "main-course",                    
                         difficulty : 2,                    
                         hours : 0,                    
                         minutes : 45,                    
@@ -110,7 +110,7 @@ $(document).ready(function() {
                     {                    
                         id : 7,                    
                         name : "Watermelon Ice Pops",                    
-                        group : 3,                    
+                        group : "dessert",                    
                         difficulty : 1,                    
                         hours : 2,                    
                         minutes : 10,                    
@@ -125,7 +125,7 @@ $(document).ready(function() {
                     {
                         id : 8,
                         name : "Plazma kocke sa kikiriki puterom",
-                        group : "4",
+                        group : "snack",
                         difficulty : 2,
                         hours : 0,
                         minutes : 45,
@@ -149,7 +149,7 @@ $(document).ready(function() {
                     {
                         id : 9,
                         name : "Slani mafini sa šunkom i sirom",
-                        group : 1,
+                        group : "appetizer",
                         difficulty : 2,
                         hours : 0,
                         minutes : 40,
@@ -164,7 +164,7 @@ $(document).ready(function() {
                     {
                         id : 10,
                         name : "Lovačke šnicle",
-                        group : 2,
+                        group : "main-course",
                         difficulty : 4,
                         hours : 1,
                         minutes : 0,
@@ -179,7 +179,7 @@ $(document).ready(function() {
                     {
                         id : 11,
                         name : "Oatmeal Peanut Butter Chocolate Chip Bars",
-                        group : 3,
+                        group : "dessert",
                         difficulty : 1,
                         hours : 0,
                         minutes : 30,
@@ -195,7 +195,7 @@ $(document).ready(function() {
                     {
                         id : 12,
                         name : "Lava kolač",
-                        group : 4,
+                        group : "snack",
                         difficulty : 1,
                         hours : 0,
                         minutes : 30,
@@ -265,7 +265,13 @@ $(document).ready(function() {
     }
 
     let currPage = document.location.href.match(/[^\/]+$/)[0]
-
     $('a[href="' + currPage + '"]').addClass("active")
+
+    
+
+    $(".log-out-btn").click(function() {
+        sessionStorage.setItem("loggedUser", "")
+        window.location.href = "index.html"
+    })
 
 })
