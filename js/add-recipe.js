@@ -95,6 +95,9 @@ $(document).ready(function() {
             }
         }
         localStorage.setItem("users", JSON.stringify(users))
+        let recipes = JSON.parse(localStorage.getItem("recipes"))
+        recipes.push(recipe)
+        localStorage.setItem("recipes", JSON.stringify(recipes))
     })
 })
 
