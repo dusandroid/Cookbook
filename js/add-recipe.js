@@ -21,7 +21,6 @@ $(document).ready(function() {
         let difficulty = $("#add-recipe-difficulty").val()
         let hours = $("#add-recipe-hours").val()
         let minutes = $("#add-recipe-minutes").val()
-        let img = $("#choose-file").val()
         let videoUrl = $("#add-recipe-url").val()
         let instructions = $("#add-recipe-instructions").val()
 
@@ -58,16 +57,11 @@ $(document).ready(function() {
 
         if (ret == true) return false
 
-        let imgName
-        if (img == ""){
-            imgName = "img/recipes/default.jpg"
-        }
-        else {
-            imgName = "img/recipes/" + currId
-        }
+        let img = "img/recipes/default.jpg"
+
 
         if (!videoUrl.includes("embed")){
-            let str = url;
+            let str = videoUrl;
             let first = str.split("=");
             let second = first[1].split("&");
             let embeddedUrl = "https://www.youtube.com/embed/" + second[0];
@@ -81,7 +75,7 @@ $(document).ready(function() {
             difficulty : difficulty,
             hours : hours,
             minutes : minutes,
-            img : imgName,
+            img : img,
             videoURL : videoUrl,
             instructions: instructions
         }
