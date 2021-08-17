@@ -80,7 +80,7 @@
         <div class="add-recipe">
             <div class="add-recipe-form">
                 <h3 class="form-label" id="reg-modal">Dodaj recept:</h5>
-                    <form>
+                    <form method="post" action="" enctype="multipart/form-data" id="myform">
                         <div class="control-group">
                             <div class="input-group">
                                 <input type="text" class="form-control" placeholder="Naziv jela" id="add-recipe-name" />
@@ -92,10 +92,10 @@
                                 <input type="number" class="form-control" placeholder="Težina pripreme" min="1" max="5" id="add-recipe-difficulty"/>
                                 <label for="" class="form-label" id="add-recipe-group-label">Grupa recepata:</label>
                                 <select class="form-control recipe-group" id="add-recipe-group">
-                                    <option class="select-color" value="1" selected>Predjelo</option>
-                                    <option class="select-color" value="2">Glavno jelo</option>
-                                    <option class="select-color" value="3">Desert</option>
-                                    <option class="select-color" value="4">Užina</option>
+                                    <option class="select-color" value="appetizer" selected>Predjelo</option>
+                                    <option class="select-color" value="main-course">Glavno jelo</option>
+                                    <option class="select-color" value="dessert">Desert</option>
+                                    <option class="select-color" value="snack">Užina</option>
                                 </select>
                             </div>
                             <div class="error" id="add-recipe-error-difficulty"></div>
@@ -112,7 +112,7 @@
                             <div class="input-group">
                                 <input type="text" class="form-control" placeholder="URL ka videu" id="add-recipe-url"/>
                                 <label for="" class="form-label">Izaberite sliku:</label>
-                                <input type="file" id="choose-file" accept="image/*">
+                                <input type="file" id="choose-file" accept="image/*" multiple>
                             </div>
                             <div class="error" id="add-recipe-error-url"></div>
                         </div>
