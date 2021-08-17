@@ -222,12 +222,93 @@
     justify-content: space-between;
 }
 
-
-
-/*******************************/
-/********* Rating CSS *********/
-/*******************************/
-
 .with-errors {
     margin-bottom: 15px;
 }
+
+
+/*******************************/
+/********* User Recipes CSS *********/
+/*******************************/
+
+.listing {
+    padding-bottom: 40px;
+}
+
+#empty-div {
+    width: 100%;
+    height: 300px;
+    background-color: #ffffff;
+
+    display: inline;
+}
+
+#empty-div p {
+    text-align: center;
+    padding-top: 100px;
+}
+
+.user-profile-menu {
+    height: 0;
+}
+
+
+/*******************************/
+/********* User Comments CSS *********/
+/*******************************/
+
+.menu li .user-comment-text{
+    width: 100%;
+}
+
+.menu li .user-profile-link {
+    width: 150px;
+    text-align: center;
+}
+
+.user-comment-list {
+    list-style: none;
+    padding: 0;
+}
+
+.user-comment-child {
+    list-style: none;
+}
+
+.user-comment-body {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.user-comment-img {
+    width: 60px;
+}
+
+.user-comment-img img {
+    width: 100%;
+    border-radius: 100px;
+}
+
+.user-comment-text {
+    padding-left: 15px;
+    width: calc(100% - 60px);
+    text-align: left;
+}
+
+.user-comment-text h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 3px;
+    text-align: left;
+    width: 100%;
+}
+
+.user-comment-text span {
+    display: block;
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: 5px;
+    
+    text-align: left;
+}
+
