@@ -1,40 +1,131 @@
 $(document).ready(function() {
     let recipes = JSON.parse(localStorage.getItem("recipes"))
+    let loggedUser = JSON.parse(sessionStorage.getItem("loggedUser"))
 
     function showRecipes(recipes) {
+        let currRecipe = ""
+
         for (let i = 0; i < recipes.length; ++i) {
-            let pic = recipes[i].img
-            let group
-            if (recipes[i].type == 1) {
-                group = "appetizer"
-            }
-            else if (recipes[i].type == 2) {
-                group = "main-course" 
-            }
-            else if (recipes[i].type == 3) {
-                group = "dessert" 
-            }
-            else if (recipes[i].type == 4) {
-                group = "snack"
-            }
-            let currRecipe = $("<div id='" + recipes[i].id + "' class='col-lg-4 col-md-6 special-grid recipes " + group + "'>" + 
-                                    "<a href='#'>" +
-                                        "<img src='" + pic + "' class='img-recipe' alt='Image'>" +
+            if (recipes[i].author == JSON.parse(sessionStorage.getItem("loggedUser")).username) {
+                currRecipe += "<div id='" + recipes[i].id + "' class='col-lg-4 col-md-6 special-grid recipes'>" + 
+                                    "<a href='recipe.html'>" +
+                                        "<img src='" + recipes[i].img + "' class='img-recipe' alt='Image'>" +
                                         "<p style='color: #719a0a;'>" + recipes[i].name + "</p>" +
                                     "</a>" +
-                                "</div>")
-            
-            $("#pics").append(currRecipe)
+                                "</div>"
+            }            
         }
+        
+        if(currRecipe == ""){
+            currRecipe = "<div class='row' id='empty-div'>" + 
+                "<p>Niste postavili nijedan recept</p>" +
+            "</div>"
+        }
+
+        $("#user-profile-pics").html(currRecipe) 
     }
 
-    showRecipes(recipes)
 
-    $(document).on("click", ".recipes", function() {
+    function showComments(recipes) {
+        let allComments = "<ul class='user-comment-list'>"
+
+        for (let i = 0; i < loggedUser.comments.length; ++i) {
+            let recipeName = ""
+            let recipeId =  loggedUser.comments[i].recipeId
+            for(let j = 0; j < recipes.length; ++j){
+                if(recipes[j].id == loggedUser.comments[i].recipeId){
+                    recipeName = recipes[j].name
+                    break;
+                }
+            }
+
+            allComments += "<li class='user-comment-item'>" +
+                "<div class='user-comment-body'>" +
+                    "<div class='user-comment-img'>" +
+                        "<img src='img/user.jpg' />" +
+                    "</div>" +
+                    "<div class='user-comment-text'>" +
+                        "<h3>" + recipeName + "</h3>" +
+                        "<p><span>" + loggedUser.comments[i].date + "</span></p>" +
+                        "<p>" + loggedUser.comments[i].body + "</p>" +
+                    "</div>" + 
+                "</div>" +
+            "</li>"
+        }
+        
+        if(allComments == "<ul class='user-comment-list'>"){
+            allComments = "<div class='row' id='empty-div'>" + 
+                "<p>Niste napisali nijedan komentar</p>" +
+            "</div>"
+        }
+        else {
+            allComments += "</ul>"
+        }
+
+        $("#user-profile-pics").html(allComments) 
+    }
+
+
+    function showRatings(recipes) {
+        let allRatings = "<ul class='user-comment-list'>"
+
+        for (let i = 0; i < loggedUser.ratings.length; ++i) {
+            let recipeName
+            let recipeIdRatings =  loggedUser.ratings[i].recipe
+            for(let j = 0; j < recipes.length; ++j){
+                if(recipes[j].id == loggedUser.ratings[i].recipe){
+                    recipeName = recipes[j].name
+                    break;
+                }
+            }
+
+            allRatings += "<li class='user-comment-item'>" +
+                "<div class='user-comment-body'>" +
+                    "<div class='user-comment-img'>" +
+                        "<img src='img/user.jpg' />" +
+                    "</div>" +
+                    "<div class='user-comment-text'>" +
+                        "<div id='" + recipes[i].id + "' class='recipes'>" + 
+                            "<h3>" + recipeName + "</h3>" +
+                            "<p>" + loggedUser.ratings[i].val + "</p>" +
+                        "</div>" + 
+                    "</div>" + 
+                "</div>" +
+            "</li>"
+        }
+        
+        if(allRatings == "<ul class='user-comment-list'>"){
+            allRatings = "<div class='row' id='empty-div'>" + 
+                "<p>Niste ocenili nijedan recept</p>" +
+            "</div>"
+        }
+        else {
+            allRatings += "</ul>"
+        }
+
+        $("#user-profile-pics").html(allRatings) 
+    }
+
+    showRatings(recipes)
+    showComments(recipes)
+    showRecipes(recipes)
+    
+    $(".recipes").click(function() {
         let id = $(this).attr('id')
         let recipe = recipes.find(element=>element.id == id)
         localStorage.setItem("recipeSingle", JSON.stringify(recipe))
-        // localStorage.setItem("history", 1)
         window.location.href="recipe.html"
-    });
+    })
+
+    $("#user-profile-recipes").click(function() {
+        showRecipes(recipes)
+    })
+
+    $("#user-profile-comments").click(function() {
+        showComments(recipes)
+    })
+
+    $("#user-profile-ratings").click(function() {
+        showRatings(recipes)
+    })
 })

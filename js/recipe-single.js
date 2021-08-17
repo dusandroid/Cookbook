@@ -53,7 +53,8 @@ $(document).ready(function() {
             return false
         }
         else {
-            let username = JSON.parse(sessionStorage.getItem("loggedUser")).username
+            let user = JSON.parse(sessionStorage.getItem("loggedUser"))
+            let username = user.username
             let currComment = JSON.parse(localStorage.getItem("currCommentId"))
 
             let today = new Date()
@@ -82,7 +83,9 @@ $(document).ready(function() {
             let recipes = JSON.parse(localStorage.getItem("recipes"))
 
             recipe.comments.push(comment)
+            user.comments.push(comment)
             localStorage.setItem("recipeSingle", JSON.stringify(recipe))
+            sessionStorage.setItem("loggedUser", JSON.stringify(user))
             
             for (let i = 0; i < recipes.length; ++i) {
                 if (recipes[i].id == recipe.id) {
