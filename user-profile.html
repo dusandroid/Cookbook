@@ -23,6 +23,7 @@
 
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
+        <link href="css/styledusan.css" rel="stylesheet">
         <link href="css/styletmp.css" rel="stylesheet">
 
     </head>
@@ -77,19 +78,23 @@
         <!-- Page Header End -->
 
 
-         <!-- Profile Start -->
-        <div class="menu">
+         <!-- Menu Start -->
+        <div class="menu user-profile-menu">
             <div class="container">
                 <div class="menu-tab">
-                    <ul class="nav nav-pills justify-content-center">
+                    <ul class="nav nav-pills justify-content-center listing">
                         <li class="nav-item">
-                            <a class="nav-link active" data-toggle="pill" href="#burgers">Moji recepti</a>
+                            <a class="nav-link user-profile-link active" data-toggle="pill" id="user-profile-recipes">Moji recepti</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="pill" href="#snacks">Moji komentari i ocene</a>
+                            <a class="nav-link user-profile-link " data-toggle="pill" id="user-profile-comments">Moji komentari</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link user-profile-link " data-toggle="pill" id="user-profile-ratings">Moje ocene</a>
                         </li>
                     </ul>
                 </div>
+                <div class="row" id="user-profile-pics">
             </div>
         </div>
 
@@ -125,5 +130,6 @@
 
         <!-- Cookbook Javascript -->
         <script src="js/script.js"></script>
+        <script src="js/user-profile.js"></script>
     </body>
 </html>
