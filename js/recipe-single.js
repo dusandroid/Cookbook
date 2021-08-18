@@ -1,7 +1,7 @@
 $(document).ready(function() {
     let recipe = JSON.parse(localStorage.getItem("recipeSingle"))
 
-    if(recipe == null) {
+    if (recipe == null) {
         recipe = recipes.find(element=>element.id == 1)
     }
 
@@ -173,4 +173,84 @@ $(document).ready(function() {
     })
     
 
-});
+})
+
+function addChar(word, char) {
+    if (char == 'č'|| char == 'ć') {
+        word += 'c';
+    }
+    else if (char == 'Č'|| char == 'Ć') {
+        word += 'C';
+    }
+    else if (char == 'đ') {
+        word += "dj"
+    }
+    else if (char == 'Đ') {
+        word += 'Dj';
+    }
+    else if (char == 'š') {
+        word += 's'
+    }
+    else if (char == 'Š') {
+        word += 'S'
+    }
+    else if (char == 'ž') {
+        word += 'z'
+    }
+    else if (char == 'Ž') {
+        word += 'Z'
+    }
+    else  {
+        word += char
+    }
+
+    return word
+}
+
+
+function generatePDF(){
+    var doc = new jsPDF()
+    let text = ""
+    let allPages = []
+    let recipe = JSON.parse(localStorage.getItem("recipeSingle"))
+
+    let rtg = recipe.ratingNum == 0 ? 0 : (recipe.ratingSum / recipe.ratingNum).toFixed(1)
+
+    let lineCnt = 1
+    let pageCnt = 1
+
+    let recipeName = ""
+    for (let i = 0; i < recipe.name.length; ++i) {
+        recipeName = addChar(recipeName, recipe.name[i])
+    }
+
+    for (let i = 0; i < recipe.instructions.length; ++i) {
+        if (i > 70 * lineCnt && i < 90 * lineCnt && recipe.instructions[i] == ' ') {
+            text = text + '\n'
+            ++lineCnt
+            if ((i > 1950 * pageCnt && i < 2050 * pageCnt && pageCnt == 1) || ((i > 2350 * pageCnt && i < 2450 * pageCnt && pageCnt !=1))) {
+                allPages.push(text)
+                text = ""
+                ++pageCnt
+            }
+        }
+        else {
+            text = addChar(text, recipe.instructions[i])
+        }
+    }
+    
+    doc.text(recipeName, 80, 10);
+    doc.text('Vlasnik recepta: ' + recipe.author, 5, 20);
+    doc.text('Vreme spremanja ' + recipe.hours + ":" + recipe.minutes, 5, 30);
+    doc.text('Prosecna ocena: ' + rtg, 5, 40);
+    allPages.push(text);
+    for (let i = 0; i < allPages.length; ++i){
+        if (i == 0) {
+            doc.text(allPages[i], 5, 50)
+        }
+        else {
+            doc.addPage().text(allPages[i], 5, 25)
+        }
+    }
+    doc.save(recipe.name)
+}
