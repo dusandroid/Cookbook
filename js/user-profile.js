@@ -9,14 +9,14 @@ $(document).ready(function() {
             if (recipes[i].author == JSON.parse(sessionStorage.getItem("loggedUser")).username) {
                 currRecipe += "<div id='" + recipes[i].id + "' class='col-lg-4 col-md-6 special-grid recipes'>" + 
                                     "<a href='recipe.html'>" +
-                                        "<img src='" + recipes[i].img + "' class='img-recipe' alt='Image'>" +
+                                        "<img src='" + recipes[i].img1 + "' class='img-recipe' alt='Image'>" +
                                         "<p style='color: #719a0a;'>" + recipes[i].name + "</p>" +
                                     "</a>" +
                                 "</div>"
             }            
         }
         
-        if(currRecipe == ""){
+        if(currRecipe == "") {
             currRecipe = "<div class='row' id='empty-div'>" + 
                 "<p>Niste postavili nijedan recept</p>" +
             "</div>"
