@@ -2,7 +2,7 @@ $(document).ready(function() {
     let recipe = JSON.parse(localStorage.getItem("recipeSingle"))
 
     if(recipe == null) {
-        recipe = recipes.find(element=>element.id == 1)
+        window.location.href = "menu.html"
     }
 
     $(".recipe-name").text(recipe.name)
@@ -11,10 +11,37 @@ $(document).ready(function() {
 
     $(".recipe-author").text("Autor: " + recipe.author)
     $("#recipe-video").attr("src", recipe.videoURL);
-    $("#recipe-img").attr("src", recipe.img);
+    $("#recipe-img1").attr("src", recipe.img1);
+    if(recipe.img2 != null){
+        $("#recipe-img2").attr("src", recipe.img2);
+    }
+    if(recipe.img3 != null){
+        $("#recipe-img3").attr("src", recipe.img3);
+    }
     $(".recipe-difficulty").text("Težina: " + recipe.difficulty)
     $(".recipe-time").text("Vreme: " + recipe.hours + "h " + recipe.minutes + "min")
     recipe.ratingNum == 0 ? $(".recipe-mark").text("Ocena: Nije ocenjen") : $(".recipe-mark").text("Ocena: " + (recipe.ratingSum / recipe.ratingNum).toFixed(1))
+
+    let currUser = JSON.parse(sessionStorage.getItem("loggedUser"))
+    if(currUser != null){
+        let myRecipe = false
+        for(let i = 0; i < currUser.recipes.length; ++i){
+            if(recipe.author == currUser.recipes[i].author){
+                myRecipe = true
+                break
+            }
+        }
+        if(myRecipe){
+            $("#delete-recipe-button").show()
+        }
+        else{
+            $("#delete-recipe-button").hide()
+        }    
+    }
+    else{
+        $("#delete-recipe-button").hide()
+    }   
+   
 
     let commentSection = ""
     if (recipe.comments.length == 0) {  
@@ -170,6 +197,60 @@ $(document).ready(function() {
         }
 
         $(".recipe-mark").html("Ocena: " + (recipe.ratingSum / recipe.ratingNum).toFixed(1))
+    })
+
+
+    $("#delete-recipe-button").click(function(){
+        let currUser = JSON.parse(sessionStorage.getItem("loggedUser"))
+        let recipes = JSON.parse(localStorage.getItem("recipes"))
+        let i
+
+        let indexOf;
+        for(i = 0; i < recipes.length; ++i){
+            if(recipe.id == recipes[i].id){
+                indexOf = i
+                break
+            }
+        }
+        recipes.splice(indexOf, 1)
+
+
+        for(i = 0; i < currUser.recipes.length; ++i){
+            if(recipe.id == currUser.recipes[i].id){
+                indexOf = i
+                break
+            }
+        }
+        currUser.recipes.splice(indexOf, 1)
+
+        i = currUser.comments.length;
+        while (i--) {
+            if(recipe.id == currUser.comments[i].recipeId){ 
+                currUser.comments.splice(i, 1)
+            }
+        }
+
+        i = currUser.ratings.length;
+        while (i--) {
+            if(recipe.id == currUser.ratings[i].recipe){ 
+                currUser.ratings.splice(i, 1)
+            }
+        }
+
+        sessionStorage.setItem("loggedUser", JSON.stringify(currUser))
+        localStorage.setItem("recipes", JSON.stringify(recipes))
+
+        let users = JSON.parse(localStorage.getItem("users"))
+        for(i = 0; i < users.length; i++){
+            if(users[i].username == currUser.username){
+                users[i] = currUser
+                break;
+            }
+        }
+        localStorage.setItem("users", JSON.stringify(users))
+        localStorage.setItem("recipeSingle", null)
+
+        window.location.href = "menu.html"
     })
     
 

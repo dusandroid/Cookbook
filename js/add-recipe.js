@@ -68,22 +68,28 @@ $(document).ready(function() {
             videoUrl = embeddedUrl;
         }
 
+        let currUser = JSON.parse(sessionStorage.getItem("loggedUser"))
         let recipe = {
+            author: currUser.username,
+            comments: [],
             id : currId,
             name : name,
             group : group,
             difficulty : difficulty,
             hours : hours,
             minutes : minutes,
-            img : img,
+            img1 : img,
+            img2 : null,
+            img3 : null,
             videoURL : videoUrl,
-            instructions: instructions
+            instructions: instructions,
+            ratingNum: 0,
+            ratingSum: 0
         }
 
         currId++;
         localStorage.setItem("currId", JSON.stringify(currId))
 
-        let currUser = JSON.parse(sessionStorage.getItem("loggedUser"))
         currUser["recipes"].push(recipe)
         sessionStorage.setItem("loggedUser", JSON.stringify(currUser))
 
