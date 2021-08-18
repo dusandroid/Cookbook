@@ -267,8 +267,8 @@ $(document).ready(function() {
                                 "<div class='nav-item dropdown'>" +
                                     "<a href='#' class='nav-link dropdown-toggle' data-toggle='dropdown'>Jezik</a>" +
                                     "<div class='dropdown-menu'>" +
-                                        "<a href='blog.html' class='dropdown-item'>Srpski</a>" + 
-                                        "<a href='single.html' class='dropdown-item'>Engleski</a>" + 
+                                        "<a href='' class='dropdown-item' id='serbian'>Srpski</a>" + 
+                                        "<a href='' class='dropdown-item' id='english'>Engleski</a>" + 
                                     "</div>" +
                                 "</div>" + 
                                 "<a href='about.html' class='nav-item nav-link'>O nama</a>" + 
@@ -281,8 +281,8 @@ $(document).ready(function() {
                                 "<div class='nav-item dropdown'>" + 
                                     "<a href='#' class='nav-link dropdown-toggle' data-toggle='dropdown'>Jezik</a>" + 
                                     "<div class='dropdown-menu'>" + 
-                                        "<a href='blog.html' class='dropdown-item'>Srpski</a>" + 
-                                        "<a href='single.html' class='dropdown-item'>Engleski</a>" +
+                                        "<a href='' class='dropdown-item' id='serbian'>Srpski</a>" + 
+                                        "<a href='' class='dropdown-item' id='english'>Engleski</a>" +
                                     "</div>" +
                                 "</div>" + 
                                 "<a href='about.html' class='nav-item nav-link'>O nama</a>")
