@@ -89,36 +89,7 @@
                         <div class="single-comment">
                             <h2 id="recipe-comments"></h2>
                             <ul class="comment-list">
-                                <!-- <li class="comment-item">
-                                    <div class="comment-body">
-                                        <div class="comment-img">
-                                            <img src="img/user.jpg" />
-                                        </div>
-                                        <div class="comment-text">
-                                            <h3 id="recipe-comment-author"></h3>
-                                            <p><span id="recipe-comment-date">Format: 01 Jan 2045 at 12:00pm</span></p>
-                                            <p></p>
-                                            <a class="btn" href="">Reply</a>
-                                        </div>
-                                    </div>
-                                    <ul class="comment-child">
-                                        <li class="comment-item">
-                                            <div class="comment-body">
-                                                <div class="comment-img">
-                                                    <img src="img/user.jpg" />
-                                                </div>
-                                                <div class="comment-text">
-                                                    <h3><a href="">Josh Dunn</a></h3>
-                                                    <p><span>01 Jan 2045 at 12:00pm</span></p>
-                                                    <p>
-                                                        Lorem ipsum dolor sit amet elit. Integer lorem augue purus mollis sapien, non eros leo in nunc. Donec a nulla vel turpis tempor ac vel justo. In hac platea dictumst. 
-                                                    </p>
-                                                    <a class="btn" href="">Reply</a>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </li> -->
+                                <!-- Comments here -->
                             </ul>
                         </div>
                         <div class="comment-form">
@@ -165,6 +136,7 @@
                                 <h2 class="widget-title recipe-difficulty"></h2>
                                 <h2 class="widget-title recipe-time"></h2>
                                 <h2 class="widget-title recipe-mark"></h2>
+                                <button class="btn custom-btn" onclick="generatePDF()">Skini kao PDF</button>
                             </div>
                         </div>
                     </div>
@@ -195,6 +167,7 @@
         <script src="lib/tempusdominus/js/moment.min.js"></script>
         <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
         <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js"></script>
         
         <!-- Contact Javascript File -->
         <script src="mail/jqBootstrapValidation.min.js"></script>

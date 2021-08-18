@@ -22,7 +22,7 @@ $(document).ready(function() {
                         ratingSum : 0,
                         ratingNum : 0,
                         videoURL : "https://www.youtube.com/embed/7N4W140M2KU",
-                        instructions: "Integralnu testeninu skuvamo sa malo soli i ocedimo. Posebno skuvanmo kukuruz šećerca sa malo soli.\nObarimo pileće belo meso sa malo soli i sitno iseckamo. Crvenu papriku iseckamo na sitne kockice.\nU činiju stavimo oceđenu testeninu, kukuruz šećerac, pileće belo meso, iseckanu crvenu papriku, origano, so i biber. Sve dobro promešamo.\nZatim dodamo kiselu pavlaku i majonez, sve dobro promešamo.\nSalatu stavimo u činijice za serviranje i dobro ohladimo u frižideru."
+                        instructions: "Integralnu testeninu skuvamo sa malo soli i ocedimo. Posebno skuvamo kukuruz šećerca sa malo soli.\nObarimo pileće belo meso sa malo soli i sitno iseckamo. Crvenu papriku iseckamo na sitne kockice.\nU činiju stavimo oceđenu testeninu, kukuruz šećerac, pileće belo meso, iseckanu crvenu papriku, origano, so i biber. Sve dobro promešamo.\nZatim dodamo kiselu pavlaku i majonez, sve dobro promešamo.\nSalatu stavimo u činijice za serviranje i dobro ohladimo u frižideru."
                     
                     },
                     {

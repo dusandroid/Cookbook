@@ -15,6 +15,7 @@ $(document).ready(function() {
     }
 
 
+
     $("#add-recipe").click(function(){
         let name = $("#add-recipe-name").val()
         let group = $("#add-recipe-group").val()
@@ -58,6 +59,7 @@ $(document).ready(function() {
         if (ret == true) return false
 
         let img = "img/recipes/default.jpg"
+
 
 
         if (!videoUrl.includes("embed")){
