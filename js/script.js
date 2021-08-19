@@ -267,32 +267,32 @@ $(document).ready(function() {
 
     if (sessionStorage.getItem("loggedUser") != "" && sessionStorage.getItem("loggedUser") != null) {
         $(".register-login").hide()
-        $(".navbar-nav").html("<a href='index.html' class='nav-item nav-link'>" + language == "serbian" ? "Početna" : "Home" + "</a>" + 
-                                "<a href='menu.html' class='nav-item nav-link'>" + language == "serbian" ? "Recepti" : "Recipes" + "</a>" + 
-                                "<a href='add-recipe.html' class='nav-item nav-link'>" + language == "serbian" ? "Dodaj recept" : "Add recipe" + "</a>" + 
-                                "<a href='user-profile.html' class='nav-item nav-link'>" + language == "serbian" ? "Moj profil" : "My account" + "</a>" + 
+        $(".navbar-nav").html("<a href='index.html' class='nav-item nav-link'>" + (language == "serbian" ? "Početna" : "Home") + "</a>" + 
+                                "<a href='menu.html' class='nav-item nav-link'>" + (language == "serbian" ? "Recepti" : "Recipes") + "</a>" + 
+                                "<a href='add-recipe.html' class='nav-item nav-link'>" + (language == "serbian" ? "Dodaj recept" : "Add recipe") + "</a>" + 
+                                "<a href='user-profile.html' class='nav-item nav-link'>" + (language == "serbian" ? "Moj profil" : "My account") + "</a>" + 
                                 "<div class='nav-item dropdown'>" +
-                                    "<a href='#' class='nav-link dropdown-toggle' data-toggle='dropdown'>" + language == "serbian" ? "Jezik" : "Language" + "</a>" +
+                                    "<a href='#' class='nav-link dropdown-toggle' data-toggle='dropdown'>" + (language == "serbian" ? "Jezik" : "Language") + "</a>" +
                                     "<div class='dropdown-menu'>" +
-                                        "<a href='#' class='dropdown-item'>" + language == "serbian" ? "Srpski" : "Serbian" + "</a>" + 
-                                        "<a href='#' class='dropdown-item'>" + language == "serbian" ? "Engleski" : "English" + "</a>" + 
+                                        "<a href='#' class='dropdown-item'>" + (language == "serbian" ? "Srpski" : "Serbian") + "</a>" + 
+                                        "<a href='#' class='dropdown-item'>" + (language == "serbian" ? "Engleski" : "English") + "</a>" + 
                                     "</div>" +
                                 "</div>" + 
-                                "<a href='about.html' class='nav-item nav-link'>" + language == "serbian" ? "O nama" : "About" + "</a>" + 
-                                "<button class='btn btn-outline-danger log-out-btn'>" + language == "serbian" ? "Odjavi se" : "Log out" + "</button>")
+                                "<a href='about.html' class='nav-item nav-link'>" + (language == "serbian" ? "O nama" : "About") + "</a>" + 
+                                "<button class='btn btn-outline-danger log-out-btn'>" + (language == "serbian" ? "Odjavi se" : "Log out") + "</button>")
     } 
     else {
         $(".register-login").show()
-        $(".navbar-nav").html("<a href='index.html' class='nav-item nav-link'>" + language == "serbian" ? "Početna" : "Home" + "</a>" + 
-                                "<a href='menu.html' class='nav-item nav-link'>" + language == "serbian" ? "Recepti" : "Recipes" + "</a>" + 
-                                "<div class='nav-item dropdown'>" + 
-                                    "<a href='#' class='nav-link dropdown-toggle' data-toggle='dropdown'>" + language == "serbian" ? "Jezik" : "Language" + "</a>" + 
-                                    "<div class='dropdown-menu'>" + 
-                                        "<a href='#' class='dropdown-item'>" + language == "serbian" ? "Srpski" : "Serbian" + "</a>" + 
-                                        "<a href='#' class='dropdown-item'>" + language == "serbian" ? "Engleski" : "English" + "</a>" +
-                                    "</div>" +
-                                "</div>" + 
-                                "<a href='about.html' class='nav-item nav-link'>" + language == "serbian" ? "O nama" : "About" + "</a>")
+        $(".navbar-nav").html("<a href='index.html' class='nav-item nav-link'>" + (language == "serbian" ? "Početna" : "Home") + "</a>" + 
+        "<a href='menu.html' class='nav-item nav-link'>" + (language == "serbian" ? "Recepti" : "Recipes") + "</a>" + 
+        "<div class='nav-item dropdown'>" + 
+            "<a href='#' class='nav-link dropdown-toggle' data-toggle='dropdown'>" + (language == "serbian" ? "Jezik" : "Language") + "</a>" + 
+            "<div class='dropdown-menu'>" + 
+                "<a href='#' class='dropdown-item'>" + (language == "serbian" ? "Srpski" : "Serbian") + "</a>" + 
+                "<a href='#' class='dropdown-item'>" + (language == "serbian" ? "Engleski" : "English") + "</a>" +
+            "</div>" +
+        "</div>" + 
+        "<a href='about.html' class='nav-item nav-link'>" + (language == "serbian" ? "O nama" : "About") + "</a>")
     }
 
     let currPage = document.location.href.match(/[^\/]+$/)[0]
