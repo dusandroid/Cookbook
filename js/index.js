@@ -79,7 +79,7 @@ $(document).ready(function() {
 
             currRecipe += "<div id='" + recipes[i].id + "' class='col-lg-4 col-md-6 special-grid recipes " + recipes[i].group + "'>" + 
                                 "<a href='#'>" +
-                                    "<img src='" + recipes[i].img + "' class='img-recipe' alt='Image'>" +
+                                    "<img src='" + recipes[i].img1 + "' class='img-recipe' alt='Image'>" +
                                     "<p style='color: #719a0a;'>" + recipes[i].name + " | Težina: " + recipes[i].difficulty + " | Ocena: " + rtg + "</p>" +
                                 "</a>" +
                             "</div>"
