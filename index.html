@@ -39,16 +39,7 @@
                 
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav ml-auto">
-                        <a href="index.html" class="nav-item nav-link active">Početna</a>
-                        <a href="about.html" class="nav-item nav-link">O nama</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Jezik</a>
-                            <div class="dropdown-menu">
-                                <a href="blog.html" class="dropdown-item">Srpski</a>
-                                <a href="single.html" class="dropdown-item">Engleski</a>
-                            </div>
-                        </div>
-                        <a href="menu.html" class="nav-item nav-link" id="recepti">Recepti</a>
+                        <!-- Navigation -->
                     </div>
                 </div>
             </div>
@@ -65,13 +56,13 @@
                             <img src="img/carousel-1.jpg" alt="Image">
                         </div>
                         <div class="carousel-text">
-                            <h1>Istražite <span>nove</span> recepte</h1>
-                            <p>
+                            <h1 id="header1">Istražite <span>nove</span> recepte</h1>
+                            <p id="text1">
                                 Pretražite jela po kategorijama i odmah započnite sa pripremom ovih ukusnih recepata!
                             </p>
                             <div class="carousel-btn register-login">
-                                <a class="btn custom-btn reg-log-btn" data-toggle="modal" data-target="#login-modal">Prijavi se</a>
-                                <a class="btn custom-btn reg-log-btn" data-toggle="modal" data-target="#register-modal">Registruj se</a>
+                                <a class="btn custom-btn reg-log-btn" id="log-btn" data-toggle="modal" data-target="#login-modal">Prijavi se</a>
+                                <a class="btn custom-btn reg-log-btn" id="reg-btn" data-toggle="modal" data-target="#register-modal">Registruj se</a>
                             </div>
                         </div>
                     </div>
@@ -80,13 +71,13 @@
                             <img src="img/carousel-2.jpg" alt="Image">
                         </div>
                         <div class="carousel-text">
-                            <h1>Podelite <span>svoje</span> recepte sa <span>celim</span> svetom</h1>
-                            <p>
+                            <h1 id="header2">Podelite <span>svoje</span> recepte sa <span>celim</span> svetom</h1>
+                            <p id="text2">
                                 Registrujte se i okačite svoje recepte već danas!
                             </p>
                             <div class="carousel-btn register-login">
-                                <a class="btn custom-btn reg-log-btn" data-toggle="modal" data-target="#login-modal">Prijavi se</a>
-                                <a class="btn custom-btn reg-log-btn" data-toggle="modal" data-target="#register-modal">Registruj se</a>
+                                <a class="btn custom-btn reg-log-btn" id="log-btn" data-toggle="modal" data-target="#login-modal">Prijavi se</a>
+                                <a class="btn custom-btn reg-log-btn" id="reg-btn" data-toggle="modal" data-target="#register-modal">Registruj se</a>
                             </div>
                         </div>
                     </div>
@@ -95,13 +86,13 @@
                             <img src="img/carousel-3.jpg" alt="Image">
                         </div>
                         <div class="carousel-text">
-                            <h1>Recepti za <span>svaku</span> priliku</h1>
-                            <p>
+                            <h1 id="header3">Recepti za <span>svaku</span> priliku</h1>
+                            <p id="text3">
                                 Kada vas napusti kreativnost u kuhinji, na Receptijani možete pronaći inspiraciju!
                             </p>
                             <div class="carousel-btn register-login">
-                                <a class="btn custom-btn reg-log-btn" data-toggle="modal" data-target="#login-modal">Prijavi se</a>
-                                <a class="btn custom-btn reg-log-btn" data-toggle="modal" data-target="#register-modal">Registruj se</a>
+                                <a class="btn custom-btn reg-log-btn" id="log-btn" data-toggle="modal" data-target="#login-modal">Prijavi se</a>
+                                <a class="btn custom-btn reg-log-btn" id="reg-btn" data-toggle="modal" data-target="#register-modal">Registruj se</a>
                             </div>
                         </div>
                     </div>
@@ -116,7 +107,7 @@
             <div class="container">
                 <div class="section-header text-center">
                     <p>Blog</p>
-                    <h2>Najnovije sa našeg bloga</h2>
+                    <h2 id="blog-text">Najnovije sa našeg bloga</h2>
                 </div>
                 <div class="row">
                     <div class="col-md-6">
@@ -215,40 +206,40 @@
             <div class="food">
                 <div class="container">
                     <div class="section-header text-center">
-                        <h2>Preporučeni kursevi</h2>
+                        <h2 id="recommended-courses">Preporučeni kursevi</h2>
                     </div>
                     <div class="row align-items-center">
                         <div class="col-md-4">
                             <div class="food-item">
                                 <!--<i class="flaticon-burger"></i>-->
                                 <img src="img/course-1.png" class="courses-img course-1" >
-                                <h2>Kurs azijske kuhinje</h2>
-                                <p>
+                                <h2 id="recommended-courses-header1">Kurs azijske kuhinje</h2>
+                                <p id="recommended-courses-text1">
                                     Istražite razne tehnike spremanja Orijentalne hrane kroz interaktivan online kurs.
                                 </p>
-                                <a href="https://www.cozymeal.com/online-cooking-classes/asian" target="_blank">Pogledaj kurseve</a>
+                                <a href="https://www.cozymeal.com/online-cooking-classes/asian" target="_blank" class="recommended-courses-btn">Pogledaj kurseve</a>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="food-item">
                                 <!--<i class="flaticon-snack"></i>-->
                                 <img src="img/course-2.png" class="courses-img course-2">
-                                <h2>Il Primo kursevi</h2>
-                                <p>
+                                <h2 id="recommended-courses-header2">Il Primo kursevi</h2>
+                                <p id="recommended-courses-text2">
                                     U opuštenoj atmosferi i prijatnom ambijentu škole bavićete se tajnama mediteranske regije kao i najboljom hranom Balkana i Srbije.
                                 </p>
-                                <a href="https://skolakuvanja.com/kursevi-kuvanja/" target="_blank">Pogledaj kurseve</a>
+                                <a href="https://skolakuvanja.com/kursevi-kuvanja/" target="_blank" class="recommended-courses-btn">Pogledaj kurseve</a>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="food-item">
                                 <!--<i class="flaticon-cocktail"></i>-->
                                 <img src="img/course-3.png" class="courses-img course-3">
-                                <h2>Kuvaj sa Gordonom</h2>
-                                <p>
+                                <h2 id="recommended-courses-header3">Kuvaj sa Gordonom</h2>
+                                <p id="recommended-courses-text3">
                                     Unapredite Vaše kulinarske veštine na sledeći nivo sa šef Remzijevim najpopularnijim kursem.
                                 </p>
-                                <a href="https://www.gordonramsay.com/gr/the-gordon-ramsay-masterclass/" target="_blank">Pogledaj kurseve</a>
+                                <a href="https://www.gordonramsay.com/gr/the-gordon-ramsay-masterclass/" target="_blank" class="recommended-courses-btn">Pogledaj kurseve</a>
                             </div>
                         </div>
                     </div>
@@ -263,7 +254,7 @@
         <div class="top-foods">
             <div class="container">
                 <div class="section-header text-center">
-                    <h2>Naši najbolji recepti</h2>
+                    <h2 id="top-recipes">Najbolji recepti</h2>
                 </div>
                 <div class="row" id="pics">
                     <!-- Recipes -->
@@ -279,8 +270,8 @@
         <div class="contact">
             <div class="container">
                 <div class="section-header text-center">
-                    <p>Kontaktiraj nas</p>
-                    <h2>Kontakt informacije</h2>
+                    <p id="contact-us">Kontaktiraj nas</p>
+                    <h2 id="contact-info">Kontakt informacije</h2>
                 </div>
                 <div class="row align-items-center contact-information">
                     <div class="col-md-6 col-lg-3">
@@ -289,8 +280,8 @@
                                 <i class="fa fa-map-marker-alt"></i>
                             </div>
                             <div class="contact-text">
-                                <h3>Adresa</h3>
-                                <p>Bulevar Kralja Aleksandra 73, Beograd, Srbija</p>
+                                <h3 id="contact-address">Adresa</h3>
+                                <p id="contact-addres-val">Bulevar Kralja Aleksandra 73, Beograd, Srbija</p>
                             </div>
                         </div>
                     </div>
@@ -300,7 +291,7 @@
                                 <i class="fa fa-phone-alt"></i>
                             </div>
                             <div class="contact-text">
-                                <h3>Kontakt telefon</h3>
+                                <h3 id="contact-phone">Kontakt telefon</h3>
                                 <p>+381 11 3226992</p>
                             </div>
                         </div>
@@ -322,7 +313,7 @@
                                 <i class="fa fa-share"></i>
                             </div>
                             <div class="contact-text">
-                                <h3>Zaprati nas</h3>
+                                <h3 id="contact-follow">Zaprati nas</h3>
                                 <div class="contact-social">
                                     <a href=""><i class="fab fa-twitter"></i></a>
                                     <a href=""><i class="fab fa-facebook-f"></i></a>
@@ -349,7 +340,7 @@
         <div class="footer">
             <div class="copyright">
                 <div class="container">
-                    <p>Copyright &copy; 2021 Aleksandra Milovic, Dusan Gradojevic, Odsek za softversko inzenjerstvo Elektrotehnickog fakulteta Univerziteta u Beogradu.</p>
+                    <p id="footer-text">Copyright &copy; 2021 Aleksandra Milovic, Dusan Gradojevic, Odsek za softversko inzenjerstvo Elektrotehnickog fakulteta Univerziteta u Beogradu.</p>
                 </div>
             </div>
         </div>
@@ -389,7 +380,7 @@
                                         <div class="errors" id="log-error"></div>
                                     </div>
                                     <div>
-                                        <button class="btn custom-btn" id="login-submit">Potvrdi</button>
+                                        <button class="btn custom-btn" id="login-submit" class="confirm-btn">Potvrdi</button>
                                     </div>
                                 </form>
                             </div>
@@ -483,7 +474,6 @@
 
         <!-- Cookbook Javascript -->
         <script src="js/script.js"></script>
-        <script src="js/log-reg.js"></script>
         <script src="js/index.js"></script>
     </body>
 </html>

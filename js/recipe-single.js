@@ -8,6 +8,11 @@ $(document).ready(function() {
     $(".recipe-name").text(recipe.name)
     $("#recipe-instructions").text(recipe.instructions)
 
+    
+    $("#leave-comment").text(language == "serbian" ? "Ostavite komentar:" : "Leave a comment:")
+    $("#comment-submit").text(language == "serbian" ? "Postavi" : "Submit")
+    $("#pdf").text(language == "serbian" ? "Skini kao PDF" : "Save as PDF")
+
 
     $(".recipe-author").text("Autor: " + recipe.author)
     $("#recipe-video").attr("src", recipe.videoURL);
