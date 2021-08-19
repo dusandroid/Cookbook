@@ -8,17 +8,7 @@ $(document).ready(function() {
         sessionStorage.setItem("language", JSON.stringify(language))
     }
 
-    $('a[id="serbian"]').click(function(){
-        language = "serbian"
-        sessionStorage.setItem("language", JSON.stringify(language))
-        window.location.href = "#"
-    })
     
-    $('a[id="english"]').click(function(){
-        language = "english"
-        sessionStorage.setItem("language", JSON.stringify(language))
-        window.location.href = "#"
-    })
 
 
     $("#h2-recipes").text(language == "serbian" ? "Recepti" : "Recipes")
