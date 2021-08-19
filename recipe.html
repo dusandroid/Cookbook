@@ -40,16 +40,7 @@
                 
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav ml-auto">
-                        <a href="index.html" class="nav-item nav-link active">Početna</a>
-                        <a href="about.html" class="nav-item nav-link">O nama</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Jezik</a>
-                            <div class="dropdown-menu">
-                                <a href="blog.html" class="dropdown-item">Srpski</a>
-                                <a href="single.html" class="dropdown-item">Engleski</a>
-                            </div>
-                        </div>
-                        <a href="menu.html" class="nav-item nav-link" id="recepti">Recepti</a>
+                        <!-- Navigation -->
                     </div>
                 </div>
             </div>
@@ -65,8 +56,8 @@
                         <h2>Recept</h2>
                     </div>
                     <div class="col-12">
-                        <a href="index.html">Početna</a>
-                        <a href="menu.html">Recepti</a>
+                        <a href="index.html" id="breadcrumbs-home">Početna</a>
+                        <a href="menu.html" id="breadcrumbs-recipes">Recepti</a>
                         <a href="" class="recipe-name"></a>
                     </div>
                 </div>
@@ -94,7 +85,7 @@
                         </div>
                         <div class="comment-form">
                             <form>
-                                <h2>Ostavite komentar:</h2>
+                                <h2 id="leave-comment">Ostavite komentar:</h2>
                                 <div class="form-group">
                                     <textarea id="message" cols="30" rows="5" class="form-control"></textarea>
                                 </div>
@@ -136,7 +127,7 @@
                                 <h2 class="widget-title recipe-difficulty"></h2>
                                 <h2 class="widget-title recipe-time"></h2>
                                 <h2 class="widget-title recipe-mark"></h2>
-                                <button class="btn custom-btn" onclick="generatePDF()">Skini kao PDF</button>
+                                <button id="pdf" class="btn custom-btn" onclick="generatePDF()">Skini kao PDF</button>
                             </div>
                         </div>
                     </div>
@@ -151,7 +142,7 @@
         <div class="footer">
             <div class="copyright">
                 <div class="container">
-                    <p>Copyright &copy; 2021 Aleksandra Milovic, Dusan Gradojevic, Odsek za softversko inzenjerstvo Elektrotehnickog fakulteta Univerziteta u Beogradu.</p>
+                    <p id="footer-text">Copyright &copy; 2021 Aleksandra Milovic, Dusan Gradojevic, Odsek za softversko inzenjerstvo Elektrotehnickog fakulteta Univerziteta u Beogradu.</p>
                 </div>
             </div>
         </div>
