@@ -274,8 +274,8 @@ $(document).ready(function() {
                                 "<div class='nav-item dropdown'>" +
                                     "<a href='#' class='nav-link dropdown-toggle' data-toggle='dropdown'>" + (language == "serbian" ? "Jezik" : "Language") + "</a>" +
                                     "<div class='dropdown-menu'>" +
-                                        "<a href='#' class='dropdown-item'>" + (language == "serbian" ? "Srpski" : "Serbian") + "</a>" + 
-                                        "<a href='#' class='dropdown-item'>" + (language == "serbian" ? "Engleski" : "English") + "</a>" + 
+                                        "<a href='#' id='serbian' class='dropdown-item language'>" + (language == "serbian" ? "Srpski" : "Serbian") + "</a>" + 
+                                        "<a href='#' id='english' class='dropdown-item language'>" + (language == "serbian" ? "Engleski" : "English") + "</a>" + 
                                     "</div>" +
                                 "</div>" + 
                                 "<a href='about.html' class='nav-item nav-link'>" + (language == "serbian" ? "O nama" : "About") + "</a>" + 
@@ -288,8 +288,8 @@ $(document).ready(function() {
         "<div class='nav-item dropdown'>" + 
             "<a href='#' class='nav-link dropdown-toggle' data-toggle='dropdown'>" + (language == "serbian" ? "Jezik" : "Language") + "</a>" + 
             "<div class='dropdown-menu'>" + 
-                "<a href='#' class='dropdown-item'>" + (language == "serbian" ? "Srpski" : "Serbian") + "</a>" + 
-                "<a href='#' class='dropdown-item'>" + (language == "serbian" ? "Engleski" : "English") + "</a>" +
+                "<a href='#' id='serbian' class='dropdown-item language'>" + (language == "serbian" ? "Srpski" : "Serbian") + "</a>" + 
+                "<a href='#' id='english' class='dropdown-item language'>" + (language == "serbian" ? "Engleski" : "English") + "</a>" +
             "</div>" +
         "</div>" + 
         "<a href='about.html' class='nav-item nav-link'>" + (language == "serbian" ? "O nama" : "About") + "</a>")
@@ -299,15 +299,10 @@ $(document).ready(function() {
     $('a[href="' + currPage + '"]').addClass("active")
 
     
-    $("#footer-text").html(language == "serbian" ?  "Copyright &copy; 2021, Aleksandra Milović, Dušan Gradojević, Odsek za softversko inženjerstvo Elektrotehničkog fakulteta Univerziteta u Beogradu." :
-                                                    "Copyright &copy; 2021, Aleksandra Milovic, Dusan Gradojevic, Software Engineering Department, School of Electrical Engineering, University of Belgrade.")
-
-    $("#breadcrumbs-home").html(language == "serbian" ? "Početna" : "Home")
-    $("#breadcrumbs-recipes").html(language == "serbian" ? "Recepti" : "Recipes")
-
-    $(".log-out-btn").click(function() {
-        sessionStorage.setItem("loggedUser", null)
-        window.location.href = "index.html"
+    $('.language').click(function(){
+        language = $(this).attr('id')
+        sessionStorage.setItem("language", language)
+        location.reload()
     })
 
 })
