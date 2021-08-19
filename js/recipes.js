@@ -4,7 +4,7 @@ $(document).ready(function() {
 
     let language = JSON.parse(sessionStorage.getItem("language"))
     if(language == null){
-        language = "serbian"
+        language = "english"
         sessionStorage.setItem("language", JSON.stringify(language))
     }
 
@@ -22,7 +22,7 @@ $(document).ready(function() {
 
 
     $("#h2-recipes").text((language=="serbian")?"Recepti":"Recipes")
-    $("#a-start-page").text((language=="serbian")?"Početna":"Start page")
+    $("#a-start-page").text((language=="serbian")?"Početna":"Home page")
     $("#a-recipes").text((language=="serbian")?"Recepti":"Recipes")
     $("#h2-recipes-header").text((language=="serbian")?"Recepti":"Recipes")
     $("#search-query-input").attr("placeholder", (language=="serbian")?"Pretražite recepte...":"Search...")
