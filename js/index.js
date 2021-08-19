@@ -4,8 +4,8 @@ $(document).ready(function() {
     let language = sessionStorage.getItem("language")
 
 
-    $("#log-btn").html(language == "serbian" ?  "Prijavi se" : "Login")
-    $("#reg-btn").html(language == "serbian" ?  "Registruj se" : "Register")
+    $(".log-btn").html(language == "serbian" ?  "Prijavi se" : "Login")
+    $(".reg-btn").html(language == "serbian" ?  "Registruj se" : "Register")
 
     $("#header1").html(language == "serbian" ?  "Istražite <span>nove</span> recepte" :
                                                 "Search for <span>new</span> recipes" )
@@ -50,6 +50,16 @@ $(document).ready(function() {
     $("#register-pass").attr("placeholder", language == "serbian" ?  "Lozinka" : "Password")
     $("#register-conf-pass").attr("placeholder", language == "serbian" ?  "Potvrdite lozinku" : "Confirm password")
     $(".confirm-btn").html(language == "serbian" ?  "Potvrdi" : "Confirm")
+
+
+    $("#blog1-h").html(language == "serbian" ? "Detoksikacija organizma" : "Detoxification of the organism")
+    $("#blog1-p").html(language == "serbian" ? ("Iako se često koristi, mnogima termin detoksikacija organizma nije u potpunosti jasan." + "<br>" + "Pod terminom detoksikacija organizma najčešće se misli na određene dijete ili proizvode za koje se tvrdi da podstiču izbacivanje toksina iz organizma.") : "Although it is often used, the term detoxification of the organism is not completely clear to many." + "<br>" + "The term detoxification of the organism usually refers to certain diets or products that are claimed to encourage the expulsion of toxins from the organism.")
+    $("#blog2-h").html(language == "serbian" ? "Uticaj čokolade na naš mozak" : "The effect of chocolate on our brain")
+    $("#blog2-p").html(language == "serbian" ? "Većina nas voli da ima pored sebe bar parče čokolade, ali ne volimo svi istu vrstu: neki više vole mlečnu čokoladu, drugi vole tamnu, belu ili čokoladu punjenu jagodom itd." + "<br>" + "Novo istraživanje iz Nemačke pokazalo je da sva čokolada ne deluje isto, kada je u pitanju vaš mozak - mnogo toga zavisi od vaših ličnih sklonosti prema čokoladi." : "Most of us like to have at least a piece of chocolate next to us, but we don't all like the same type: some prefer milk chocolate, others prefer dark, white or chocolate filled with strawberries, etc." + "<br>" + "New research from Germany has shown that not all chocolate works the same when it comes to your brain - a lot depends on your personal preferences for chocolate.")
+    $("#blog3-h").html(language == "serbian" ? "Uticaj kofeina na naš organizam" : "The effect of caffeine on our body")
+    $("#blog3-p").html(language == "serbian" ? "Mnogi od nas se oslanjaju na jutarnju šolju kafe ili potrebu za kofeinom u popodnevnim satima kako bi lakše izdržali naporan dan. Ali kofein čini mnogo više od toga da vas samo budi. To je stimulans centralnog nervnog sistema koji na vaše telo utiče na brojne načine." : "Many of us rely on a morning cup of coffee or the need for caffeine in the afternoon to more easily withstand a busy day. But caffeine does much more than just wake you up. It is a stimulant of the central nervous system that affects your body in a number of ways.")
+    $("#blog4-h").html(language == "serbian" ? "Zašto je šećer štetan po ljudsko zdravlje" : "Why sugar is harmful to human health")
+    $("#blog4-p").html(language == "serbian" ? " Velika većina ljudi je svesna da je šećer veoma štetan po ljudsko zdravlje. Ali mnogi od nijh ne bi mogli da navedu glavne razloge za to. U ovom članku ćemo videti zašto je to tako." : "The vast majority of people are aware that sugar is very harmful to human health. But many of them would not be able to state the main reasons for that. In this article, we will see why this is so.")
 
     
 
