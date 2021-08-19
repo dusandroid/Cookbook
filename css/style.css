@@ -1719,6 +1719,8 @@ a:focus {
 .sidebar .image-widget img {
     max-width: 100%;
     transition: .3s;
+    margin-bottom: 12px;
+    border-radius: 10px;
 }
 
 .sidebar .image-widget img:hover {

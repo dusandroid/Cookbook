@@ -14,7 +14,9 @@ $(document).ready(function() {
                         difficulty : 2,
                         hours : 0,
                         minutes : 30,
-                        img : "img/recipes/salata-sa-piletinom.jpg",
+                        img1 : "img/recipes/salata-sa-piletinom-1.jpg",
+                        img2 : "img/recipes/salata-sa-piletinom-2.jpg",
+                        img3 : "img/recipes/salata-sa-piletinom-3.jpg",
                         author : "aleks",
                         comments: [],
                         ratingSum : 0,
@@ -30,7 +32,9 @@ $(document).ready(function() {
                         difficulty : 4,
                         hours : 1,
                         minutes : 0,
-                        img : "img/recipes/riblji-paprikas.jpg",
+                        img1 : "img/recipes/riblji-paprikas-1.jpg",
+                        img2 : "img/recipes/riblji-paprikas-2.jpg",
+                        img3 : "img/recipes/riblji-paprikas-3.jpg",
                         author : "aleks",
                         comments: [],
                         ratingSum : 0,
@@ -45,7 +49,9 @@ $(document).ready(function() {
                         difficulty : 1,
                         hours : 0,
                         minutes : 5,
-                        img : "img/recipes/strawberry-banana-smoothie.jpg",
+                        img1 : "img/recipes/strawberry-banana-smoothie-1.jpg",
+                        img2 : "img/recipes/strawberry-banana-smoothie-2.jpg",
+                        img3 : "img/recipes/strawberry-banana-smoothie-3.jpg",
                         author : "aleks",
                         comments: [],
                         ratingSum : 0,
@@ -60,7 +66,9 @@ $(document).ready(function() {
                         difficulty : 1,
                         hours : 0,
                         minutes : 15,
-                        img : "img/recipes/americki-kolacici.jpg",
+                        img1 : "img/recipes/americki-kolacici-1.jpg",
+                        img2 : "img/recipes/americki-kolacici-2.jpg",
+                        img3 : "img/recipes/americki-kolacici-3.jpg",
                         author : "aleks",
                         comments: [],
                         ratingSum : 0,
@@ -83,8 +91,10 @@ $(document).ready(function() {
                         group : "appetizer",                    
                         difficulty : 2,                    
                         hours : 1,                    
-                        minutes : 0,                    
-                        img : "img/recipes/pita-sa-spanacem.jpg",         
+                        minutes : 0,                     
+                        img1 : "img/recipes/pita-sa-spanacem-1.jpg",
+                        img2 : "img/recipes/pita-sa-spanacem-2.jpg",
+                        img3 : "img/recipes/pita-sa-spanacem-3.jpg",       
                         author : "dusan",
                         comments: [],
                         ratingSum : 0,
@@ -99,7 +109,9 @@ $(document).ready(function() {
                         difficulty : 2,                    
                         hours : 0,                    
                         minutes : 45,                    
-                        img : "img/recipes/spagete-sa-tikvicama-i-slaninom.jpg",  
+                        img1 : "img/recipes/spagete-sa-tikvicama-i-slaninom-1.jpg",
+                        img2 : "img/recipes/spagete-sa-tikvicama-i-slaninom-2.jpg",
+                        img3 : "img/recipes/spagete-sa-tikvicama-i-slaninom-3.jpg", 
                         author : "dusan",
                         comments: [],
                         ratingSum : 0,
@@ -113,8 +125,10 @@ $(document).ready(function() {
                         group : "dessert",                    
                         difficulty : 1,                    
                         hours : 2,                    
-                        minutes : 10,                    
-                        img : "img/recipes/watermelon-ice-pops.jpg",     
+                        minutes : 10,                       
+                        img1 : "img/recipes/watermelon-ice-pops-1.jpg",
+                        img2 : "img/recipes/watermelon-ice-pops-2.jpg",
+                        img3 : "img/recipes/watermelon-ice-pops-3.jpg", 
                         author : "dusan",
                         comments: [],
                         ratingSum : 0,
@@ -129,7 +143,9 @@ $(document).ready(function() {
                         difficulty : 2,
                         hours : 0,
                         minutes : 45,
-                        img : "img/recipes/plazma-kocke-sa-kikiriki-puterom.jpg",
+                        img1 : "img/recipes/plazma-kocke-sa-kikiriki-puterom-1.jpg",
+                        img2 : "img/recipes/plazma-kocke-sa-kikiriki-puterom-2.jpg",
+                        img3 : "img/recipes/plazma-kocke-sa-kikiriki-puterom-3.jpg",
                         author : "dusan",
                         comments: [],
                         ratingSum : 0,
@@ -153,7 +169,9 @@ $(document).ready(function() {
                         difficulty : 2,
                         hours : 0,
                         minutes : 40,
-                        img : "img/recipes/mafin-sa-sunkom-i-sirom.jpg",
+                        img1 : "img/recipes/mafin-sa-sunkom-i-sirom-1.jpg",
+                        img2 : "img/recipes/mafin-sa-sunkom-i-sirom-2.jpg",
+                        img3 : "img/recipes/mafin-sa-sunkom-i-sirom-3.jpg",
                         author : "admin",
                         comments: [],
                         ratingSum : 0,
@@ -168,7 +186,9 @@ $(document).ready(function() {
                         difficulty : 4,
                         hours : 1,
                         minutes : 0,
-                        img : "img/recipes/lovacke-snicle.jpg",
+                        img1 : "img/recipes/lovacke-snicle-1.jpg",
+                        img2 : "img/recipes/lovacke-snicle-2.jpg",
+                        img3 : "img/recipes/lovacke-snicle-3.jpg",
                         author : "admin",
                         comments: [],
                         ratingSum : 0,
@@ -183,7 +203,9 @@ $(document).ready(function() {
                         difficulty : 1,
                         hours : 0,
                         minutes : 30,
-                        img : "img/recipes/oatmeal-pb-cc-bars.jpg",
+                        img1 : "img/recipes/oatmeal-pb-cc-bars-1.jpg",
+                        img2 : "img/recipes/oatmeal-pb-cc-bars-2.jpg",
+                        img3 : "img/recipes/oatmeal-pb-cc-bars-3.jpg",
                         author : "admin",
                         comments: [],
                         ratingSum : 0,
@@ -199,7 +221,9 @@ $(document).ready(function() {
                         difficulty : 1,
                         hours : 0,
                         minutes : 30,
-                        img : "img/recipes/lava-kolac.jpg",
+                        img1 : "img/recipes/lava-kolac-1.jpg",
+                        img2 : "img/recipes/lava-kolac-2.jpg",
+                        img3 : "img/recipes/lava-kolac-3.jpg",
                         author : "admin",
                         comments: [],
                         ratingSum : 0,
@@ -213,7 +237,7 @@ $(document).ready(function() {
             }
         ]
         localStorage.setItem("users", JSON.stringify(users))
-        sessionStorage.setItem("loggedUser", "")
+        sessionStorage.setItem("loggedUser", null)
 
         let recipes = []
         for (let i = 0; i < users.length; ++i) {
@@ -282,7 +306,7 @@ $(document).ready(function() {
     $("#breadcrumbs-recipes").html(language == "serbian" ? "Recepti" : "Recipes")
 
     $(".log-out-btn").click(function() {
-        sessionStorage.setItem("loggedUser", "")
+        sessionStorage.setItem("loggedUser", null)
         window.location.href = "index.html"
     })
 

@@ -2,6 +2,45 @@ $(document).ready(function() {
     let recipes = JSON.parse(localStorage.getItem("recipes"))
     let sortPrev = null
 
+    let language = JSON.parse(sessionStorage.getItem("language"))
+    if(language == null){
+        language = "serbian"
+        sessionStorage.setItem("language", JSON.stringify(language))
+    }
+
+    $('a[id="serbian"]').click(function(){
+        language = "serbian"
+        sessionStorage.setItem("language", JSON.stringify(language))
+        window.location.href = "#"
+    })
+    
+    $('a[id="english"]').click(function(){
+        language = "english"
+        sessionStorage.setItem("language", JSON.stringify(language))
+        window.location.href = "#"
+    })
+
+
+    $("#h2-recipes").text((language=="serbian")?"Recepti":"Recipes")
+    $("#a-start-page").text((language=="serbian")?"Početna":"Start page")
+    $("#a-recipes").text((language=="serbian")?"Recepti":"Recipes")
+    $("#h2-recipes-header").text((language=="serbian")?"Recepti":"Recipes")
+    $("#search-query-input").attr("placeholder", (language=="serbian")?"Pretražite recepte...":"Search...")
+    $("#sort-recipes").text((language=="serbian")?"Sortiraj":"Sort by")
+    $("#diff").attr("label", (language=="serbian")?"Tezina":"Difficulty")
+    $("#rtg").attr("label", (language=="serbian")?"Ocena":"Rating")
+    $('option[value="sort-diff-asc"]').text((language=="serbian")?"Tezina Rastuće":"Difficulty Ascending")
+    $('option[value="sort-diff-desc"]').text((language=="serbian")?"Tezina Opadajuće":"Difficulty Ascending")
+    $('option[value="sort-rtg-asc"]').text((language=="serbian")?"Ocena Rastuće":"Rating Ascending")
+    $('option[value="sort-rtg-desc"]').text((language=="serbian")?"Ocena Opadajuće":"Rating Ascending")
+    $("#all").text((language=="serbian")?"Svi":"All")
+    $("#appetizer").text((language=="serbian")?"Predjelo":"Appetizer")
+    $("#main-course").text((language=="serbian")?"Glavno jelo":"Main course")
+    $("#dessert").text((language=="serbian")?"Dezert":"Dessert")
+    $("#snack").text((language=="serbian")?"Užina":"Snack")
+
+
+
     function sortRecipes() {
         let sort = $("select").val()
         if (sort != null && (sort == sortPrev) == false) {
@@ -45,8 +84,8 @@ $(document).ready(function() {
 
                 currRecipe += "<div id='" + recipes[i].id + "' class='col-lg-4 col-md-6 special-grid recipes " + recipes[i].group + "'>" + 
                                     "<a href='#'>" +
-                                        "<img src='" + recipes[i].img + "' class='img-recipe' alt='Image'>" +
-                                        "<p style='color: #719a0a;'>" + recipes[i].name + " | Težina: " + recipes[i].difficulty + " | Ocena: " + rtg + "</p>" +
+                                        "<img src='" + recipes[i].img1 + "' class='img-recipe' alt='Image'>" +
+                                        "<p style='color: #719a0a;'>" + recipes[i].name + " | " + ((language=="serbian")?"Težina: ":"Difficulty: ") + recipes[i].difficulty + " | " + ((language=="serbian")?"Ocena: ":"Rating: ") + rtg + "</p>" +
                                     "</a>" +
                                 "</div>"
             }
