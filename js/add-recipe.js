@@ -114,6 +114,7 @@ $(document).ready(function() {
         let recipes = JSON.parse(localStorage.getItem("recipes"))
         recipes.push(recipe)
         localStorage.setItem("recipes", JSON.stringify(recipes))
+        alert(language == "serbian" ? "Recept uspešno dodat!" : "Recipe successfully added!")
     })
 })
 
