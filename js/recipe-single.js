@@ -5,73 +5,57 @@ $(document).ready(function() {
         window.location.href = "menu.html"
     }
 
-    $(".recipe-name").text(recipe.name)
-    $("#recipe-instructions").text(recipe.instructions)
-
-    
-    $("#leave-comment").text(language == "serbian" ? "Ostavite komentar:" : "Leave a comment:")
-    $("#comment-submit").text(language == "serbian" ? "Postavi" : "Submit")
-    $("#pdf").text(language == "serbian" ? "Skini kao PDF" : "Save as PDF")
-
-
-    $(".recipe-author").text("Autor: " + recipe.author)
-    $("#recipe-video").attr("src", recipe.videoURL);
-    $("#recipe-img1").attr("src", recipe.img1);
-    if(recipe.img2 != null){
-        $("#recipe-img2").attr("src", recipe.img2);
+    let language = sessionStorage.getItem("language")
+    if (language == null) {
+        language = "serbian"
+        sessionStorage.setItem("language", language)
     }
-    if(recipe.img3 != null){
-        $("#recipe-img3").attr("src", recipe.img3);
+
+
+    function showComments() {
+        if (recipe.comments.length != 0) {
+            for (let i = 0; i < recipe.comments.length; ++i) {
+                commentSection +=   "<li class='comment-item'>" +
+                                        "<div class='comment-body'>" +
+                                            "<div class='comment-img'>" +
+                                                "<img src='img/user.jpg' />" +
+                                            "</div>" +
+                                            "<div class='comment-text'>" +
+                                                "<h3>" + recipe.comments[i].author + "</h3>" +
+                                                "<p><span>" + recipe.comments[i].date + "</span></p>" +
+                                                "<p>" + recipe.comments[i].body + "</p>" +
+                                            "</div>" + 
+                                        "</div>" +
+                                    "</li>"        
+            }
+            $(".comment-list").html(commentSection)
+        }
     }
-    $(".recipe-difficulty").text("Težina: " + recipe.difficulty)
-    $(".recipe-time").text("Vreme: " + recipe.hours + "h " + recipe.minutes + "min")
-    recipe.ratingNum == 0 ? $(".recipe-mark").text("Ocena: Nije ocenjen") : $(".recipe-mark").text("Ocena: " + (recipe.ratingSum / recipe.ratingNum).toFixed(1))
+
 
     let currUser = JSON.parse(sessionStorage.getItem("loggedUser"))
-    if(currUser != null){
+    if (currUser != null) {
         let myRecipe = false
-        for(let i = 0; i < currUser.recipes.length; ++i){
-            if(recipe.author == currUser.recipes[i].author){
+        for(let i = 0; i < currUser.recipes.length; ++i) {
+            if(recipe.author == currUser.recipes[i].author) {
                 myRecipe = true
                 break
             }
         }
-        if(myRecipe){
+        if (myRecipe) {
             $("#delete-recipe-button").show()
         }
-        else{
+        else {
             $("#delete-recipe-button").hide()
         }    
     }
-    else{
+    else {
         $("#delete-recipe-button").hide()
     }   
-   
 
-    let commentSection = ""
-    if (recipe.comments.length == 0) {  
-        $("#recipe-comments").text("0 komentara")
-    }
-    else {
-        recipe.comments.length == 1 ? $("#recipe-comments").text("1 komentar") : $("#recipe-comments").text(recipe.comments.length + " komentara")
+    
 
-        
-        for (let i = 0; i < recipe.comments.length; ++i) {
-            commentSection += "<li class='comment-item'>" +
-                            "<div class='comment-body'>" +
-                                "<div class='comment-img'>" +
-                                    "<img src='img/user.jpg' />" +
-                                "</div>" +
-                                "<div class='comment-text'>" +
-                                    "<h3>" + recipe.comments[i].author + "</h3>" +
-                                    "<p><span>" + recipe.comments[i].date + "</span></p>" +
-                                    "<p>" + recipe.comments[i].body + "</p>" +
-                                "</div>" + 
-                            "</div>" +
-                        "</li>"        
-        }
-        $(".comment-list").html(commentSection)
-    }
+    showComments()
 
 
 
@@ -81,7 +65,7 @@ $(document).ready(function() {
         let msg = $("#message").val()
 
         if (msg == "") {
-            $("#msg-empty-error").text("Niste uneli tekst komentara")
+            $("#msg-empty-error").text(language == "serbian" ? "Niste uneli tekst komentara" : "No comment body")
             return false
         }
         else {
@@ -133,23 +117,15 @@ $(document).ready(function() {
                     break
                 }
             }
-            commentSection += "<li class='comment-item'>" +
-                            "<div class='comment-body'>" +
-                                "<div class='comment-img'>" +
-                                    "<img src='img/user.jpg' />" +
-                                "</div>" +
-                                "<div class='comment-text'>" +
-                                    "<h3>" + comment.author + "</h3>" +
-                                    "<p><span>" + comment.date + "</span></p>" +
-                                    "<p>" + comment.body + "</p>" +
-                                "</div>" + 
-                            "</div>" +
-                        "</li>"
-            $(".comment-list").html(commentSection)
+            showComments()
         }
         $("#message").val('')
-        recipe.comments.length == 1 ? $("#recipe-comments").text("1 komentar") : $("#recipe-comments").text(recipe.comments.length + " komentara")
+        recipe.comments.length == 1 ?   $("#recipe-comments").text(language == "serbian" ? "1 komentar" : "1 comment") : 
+                                        $("#recipe-comments").text(recipe.comments.length + (language == "serbian" ? " komentara" : " comments"))
     })
+
+
+
 
 
     $("input[name=rate]").click(function() {
@@ -201,7 +177,7 @@ $(document).ready(function() {
             }
         }
 
-        $(".recipe-mark").html("Ocena: " + (recipe.ratingSum / recipe.ratingNum).toFixed(1))
+        $(".recipe-mark").html((language == "serbian" ? "Ocena: " : "Rating: ") + (recipe.ratingSum / recipe.ratingNum).toFixed(1))
     })
 
 
@@ -326,9 +302,9 @@ function generatePDF(){
     }
     
     doc.text(recipeName, 80, 10);
-    doc.text('Vlasnik recepta: ' + recipe.author, 5, 20);
-    doc.text('Vreme spremanja ' + recipe.hours + ":" + recipe.minutes, 5, 30);
-    doc.text('Prosecna ocena: ' + rtg, 5, 40);
+    doc.text((language == "serbian" ? 'Autor: ' : "Author: ") + recipe.author, 5, 20);
+    doc.text((language == "serbian" ? 'Vreme: ' : "Time: ") + recipe.hours + ":" + recipe.minutes, 5, 30);
+    doc.text((language == "serbian" ? 'Ocena: ' : "Rating: ") + rtg, 5, 40);
     allPages.push(text);
     for (let i = 0; i < allPages.length; ++i){
         if (i == 0) {
