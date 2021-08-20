@@ -7,6 +7,7 @@ $(document).ready(function() {
 
     let loggedUser = JSON.parse(sessionStorage.getItem("loggedUser"))
 
+    $("#breadcrumbs-name").html(language == "serbian" ? "Moj profil" : "My account")
     $("#profile-name").text(loggedUser.username)
     $("#user-profile-recipes").text(language == "serbian" ? "Moji recepti" : "My recipes")
     $("#user-profile-comments").text(language == "serbian" ? "Moji komentari" : "My comments")
