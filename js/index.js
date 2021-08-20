@@ -50,11 +50,13 @@ $(document).ready(function() {
     $("#login-submit").click(function() {
         let username = $("#login-username").val()
         let password = $("#login-pass").val()
+        
+        $("#log-error").text("")
 
         let currUser = users.find(user=>user.username == username)
 
         if (currUser == null || currUser.password != password) {
-            $("#log-error").text("Podaci nisu ispravno uneti")
+            $("#log-error").text(language == "serbian" ?  "Podaci nisu ispravno uneti" : "Data not entered correctly")
             return false
         }
         sessionStorage.setItem("loggedUser", JSON.stringify(currUser))
@@ -71,47 +73,52 @@ $(document).ready(function() {
         let password = $("#register-pass").val()
         let confPassword = $("#register-conf-pass").val()
 
+        $("#reg-username-error").text("")
+        $("#reg-email-error").text("")
+        $("#reg-pass-error").text("")
+        $("#reg-conf-pass-error").text("")
+
         let ret = false
 
         if (username.length < 5) {
-            $("#reg-username-error").text("Korisničko ime mora imati bar 5 karaktera")
+            $("#reg-username-error").text(language == "serbian" ? "Korisničko ime mora imati bar 5 karaktera" : "Username must be at least 5 characters long")
             ret = true
         }
         var regexEmail = /\S+@\S+\.\S+/;
         if (regexEmail.test(email) == false) {
-            $("#reg-email-error").text("Email nije u ispravnom formatu")
+            $("#reg-email-error").text(language == "serbian" ? "Email nije u ispravnom formatu" : "Email is not in the correct format")
             ret = true
         }
         if (password.length < 8) {
-            $("#reg-pass-error").text("Lozinka mora imati bar 8 karaktera")
+            $("#reg-pass-error").text(language == "serbian" ? "Lozinka mora imati bar 8 karaktera" : "The password must be at least 8 characters long")
             ret = true
         }
         if (users.find(user=>user.username == username) != null) {
-            $("#reg-username-error").text("Korisničko ime već postoji")
+            $("#reg-username-error").text(language == "serbian" ? "Korisničko ime već postoji" : "Username already exists")
             ret = true
         }
         if (users.find(user=>user.email == email) != null) {
-            $("#reg-email-error").text("Email već postoji")
+            $("#reg-email-error").text(language == "serbian" ? "Email već postoji" : "Email already exists")
             ret = true
         }
         if (password != confPassword) {
-            $("#reg-conf-pass-error").text("Lozinke se ne poklapaju")
+            $("#reg-conf-pass-error").text(language == "serbian" ? "Lozinke se ne poklapaju" : "Passwords do not match")
             ret = true
         }
         if (username == "") {
-            $("#reg-username-error").text("Niste uneli korisničko ime")
+            $("#reg-username-error").text(language == "serbian" ?  "Niste uneli korisničko ime" : "You have not entered a username")
             ret = true
         }
         if (email == "") {
-            $("#reg-email-error").text("Niste uneli email")
+            $("#reg-email-error").text(language == "serbian" ?  "Niste uneli email" : "You have not entered an email")
             ret = true
         }
         if (password == "") {
-            $("#reg-pass-error").text("Niste uneli lozinku")
+            $("#reg-pass-error").text(language == "serbian" ?  "Niste uneli lozinku" : "You have not entered a password")
             ret = true
         }
         if (confPassword == "") {
-            $("#reg-conf-pass-error").text("Niste potvrdili lozinku")
+            $("#reg-conf-pass-error").text(language == "serbian" ? "Niste potvrdili lozinku" : "You have not confirmed the password")
             ret = true
         }
 
@@ -134,11 +141,4 @@ $(document).ready(function() {
         window.location.href = "index.html"
     })
 
-    $(".reg-log-btn").click(function() {
-        $("#log-error").text("")
-        $("#reg-username-error").text("")
-        $("#reg-email-error").text("")
-        $("#reg-pass-error").text("")
-        $("#reg-conf-pass-error").text("")
-    })
 })

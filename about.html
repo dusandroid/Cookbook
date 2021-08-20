@@ -61,11 +61,11 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h2>O nama</h2>
+                        <h2 id="h2-about">O nama</h2>
                     </div>
                     <div class="col-12">
-                        <a href="index.html">Početna</a>
-                        <a href="">O nama</a>
+                        <a href="index.html" id="breadcrumbs-home">Početna</a>
+                        <a href="" id="breadcrumbs-about">O nama</a>
                     </div>
                 </div>
             </div>
@@ -80,27 +80,22 @@
                     <div class="col-lg-6">
                         <div class="about-img">
                             <img src="img/about.jpg" alt="Image">
-                            <!--
-                                <button type="button" class="btn-play" data-toggle="modal" data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-target="#videoModal">
-                                <span></span>
-                                </button>
-                            -->
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="about-content">
                             <div class="section-header">
-                                <p>O nama</p>
-                                <h2>Mi smo Receptijana</h2>
+                                <p id="about-p">O nama</p>
+                                <h2 id="about-h2">Mi smo Receptijana</h2>
                             </div>
                             <div class="about-text">
-                                <p>
+                                <p id="about-p1">
                                     Receptijana je platforma za deljenje i preuzimanje recepata nastala 2021. kao domaći zadatak iz predmeta Veb dizajn na Elektrotehničkom fakultetu Univerziteta u Beogradu.
                                 </p>
-                                <p>
+                                <p id="about-p2">
                                     Ishrana je jako bitan aspekt našeg zdravlja i treba joj posvetiti posebnu pažnju, zato ohrabrujemo posetioce da se registruju i postanu članovi Receptijane i podele sa svetom svoje zanimljive ideje za spremanje hrane.
                                 </p>
-                                <p>
+                                <p id="about-p3">
                                     Svojim jednostavnim ali unikatnim dizajnom naš veb sajt pruža korisnicima mogućnost da na lak način koriste sve funkcionalnosti (logovanje, registracija, pretraga...)
                                 </p>
                             </div>
@@ -126,7 +121,7 @@
             <div class="food">
                 <div class="container">
                     <div class="section-header text-center">
-                        <h2>Osvojene nagrade</h2>
+                        <h2 id="awards-h2">Osvojene nagrade</h2>
                     </div>
                     <div class="row align-items-center">
                         <div class="col-md-4">
@@ -134,10 +129,10 @@
                                 <!--<i class="flaticon-burger"></i>-->
                                 <img src="img/Web-Awards-Logo.png" class="awards-img webawards" >
                                 <h2>Web Awards, 2021</h2>
-                                <p>
+                                <p id="awards-p1">
                                     Prestižna nagrada za najbolji sajt godine na temu "Kuvanje i recepti" pripala je našem veb sajtu
                                 </p>
-                                <a href="https://www.webaward.org/" target="_blank">Zvaničan sajt</a>
+                                <a href="https://www.webaward.org/" target="_blank" class="awards-a">Zvaničan sajt</a>
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -145,10 +140,10 @@
                                 <!--<i class="flaticon-snack"></i>-->
                                 <img src="img/CSS-Design-Awards-Logo.png" class="awards-img cssdesign">
                                 <h2>CSS Design Awards, Avgust 2021</h2>
-                                <p>
+                                <p id="awards-p2">
                                     Nakon završenog glasanja sudija i publike, osvojili smo sertifikat za najbolji UI/UX dizajn meseca 
                                 </p>
-                                <a href="https://www.cssdesignawards.com/" target="_blank">Zvaničan sajt</a>
+                                <a href="https://www.cssdesignawards.com/" target="_blank" class="awards-a">Zvaničan sajt</a>
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -156,10 +151,10 @@
                                 <!--<i class="flaticon-cocktail"></i>-->
                                 <img src="img/awwwards-Logo.png" class="awards-img awwwards">
                                 <h2>awwwards., 2021</h2>
-                                <p>
+                                <p id="awards-p3">
                                     Naša druga za redom nagrada za veb sajt godine 2021. u kategoriji "Hrana i piće"
                                 </p>
-                                <a href="https://www.awwwards.com/" target="_blank">Zvaničan sajt</a>
+                                <a href="https://www.awwwards.com/" target="_blank" class="awards-a">Zvaničan sajt</a>
                             </div>
                         </div>
                     </div>
@@ -269,6 +264,7 @@
 
         <!-- Cookbook Javascript -->
         <script src="js/script.js"></script>
+        <script src="translate/script-t.js"></script>
         <script src="translate/about-t.js"></script>
     </body>
 </html>
