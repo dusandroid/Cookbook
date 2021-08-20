@@ -14,6 +14,7 @@ $(document).ready(function() {
 
     function showComments() {
         if (recipe.comments.length != 0) {
+            let commentSection = ""
             for (let i = 0; i < recipe.comments.length; ++i) {
                 commentSection +=   "<li class='comment-item'>" +
                                         "<div class='comment-body'>" +
