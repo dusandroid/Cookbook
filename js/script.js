@@ -305,4 +305,9 @@ $(document).ready(function() {
         location.reload()
     })
 
+    $('.log-out-btn').click(function() {
+        sessionStorage.setItem("loggedUser", "")
+        window.location.href = "index.html"
+    })
+
 })

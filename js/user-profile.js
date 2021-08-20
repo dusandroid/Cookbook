@@ -2,12 +2,18 @@ $(document).ready(function() {
     let recipes = JSON.parse(localStorage.getItem("recipes"))
     let loggedUser = JSON.parse(sessionStorage.getItem("loggedUser"))
 
-    function showRecipes(recipes) {
+    let language = sessionStorage.getItem("language")
+    if (language == null) {
+        language = "serbian"
+        sessionStorage.setItem("language", language)
+    }
+
+    function showRecipes() {
         let currRecipe = ""
 
         for (let i = 0; i < recipes.length; ++i) {
             if (recipes[i].author == JSON.parse(sessionStorage.getItem("loggedUser")).username) {
-                currRecipe += "<div id='" + recipes[i].id + "' class='col-lg-4 col-md-6 special-grid recipes'>" + 
+                currRecipe +=   "<div id='" + recipes[i].id + "' class='col-lg-4 col-md-6 special-grid recipes'>" + 
                                     "<a href='recipe.html'>" +
                                         "<img src='" + recipes[i].img1 + "' class='img-recipe' alt='Image'>" +
                                         "<p style='color: #719a0a;'>" + recipes[i].name + "</p>" +
@@ -17,16 +23,16 @@ $(document).ready(function() {
         }
         
         if(currRecipe == "") {
-            currRecipe = "<div class='row' id='empty-div'>" + 
-                "<p>Niste postavili nijedan recept</p>" +
-            "</div>"
+            currRecipe =    "<div class='row' id='empty-div'>" + 
+                                "<p>" + (language == "serbian" ? "Niste postavili nijedan recept" : "You have no recipes") + "</p>" +
+                            "</div>"
         }
 
         $("#user-profile-pics").html(currRecipe) 
     }
 
 
-    function showComments(recipes) {
+    function showComments() {
         let allComments = "<ul class='user-comment-list'>"
 
         for (let i = 0; i < loggedUser.comments.length; ++i) {
@@ -39,24 +45,24 @@ $(document).ready(function() {
                 }
             }
 
-            allComments += "<li class='user-comment-item'>" +
-                "<div class='user-comment-body'>" +
-                    "<div class='user-comment-img'>" +
-                        "<img src='img/user.jpg' />" +
-                    "</div>" +
-                    "<div class='user-comment-text'>" +
-                        "<h3>" + recipeName + "</h3>" +
-                        "<p><span>" + loggedUser.comments[i].date + "</span></p>" +
-                        "<p>" + loggedUser.comments[i].body + "</p>" +
-                    "</div>" + 
-                "</div>" +
-            "</li>"
+            allComments +=  "<li class='user-comment-item'>" +
+                                "<div class='user-comment-body'>" +
+                                    "<div class='user-comment-img'>" +
+                                        "<img src='img/user.jpg' />" +
+                                    "</div>" +
+                                    "<div class='user-comment-text'>" +
+                                        "<h3>" + recipeName + "</h3>" +
+                                        "<p><span>" + loggedUser.comments[i].date + "</span></p>" +
+                                        "<p>" + loggedUser.comments[i].body + "</p>" +
+                                    "</div>" + 
+                                "</div>" +
+                            "</li>"
         }
         
-        if(allComments == "<ul class='user-comment-list'>"){
-            allComments = "<div class='row' id='empty-div'>" + 
-                "<p>Niste napisali nijedan komentar</p>" +
-            "</div>"
+        if(allComments == "<ul class='user-comment-list'>") {
+            allComments =   "<div class='row' id='empty-div'>" + 
+                                "<p>" + (language == "serbian" ? "Niste napisali nijedan komentar" : "You have no comments") + "</p>" +
+                            "</div>"
         }
         else {
             allComments += "</ul>"
@@ -66,7 +72,7 @@ $(document).ready(function() {
     }
 
 
-    function showRatings(recipes) {
+    function showRatings() {
         let allRatings = "<ul class='user-comment-list'>"
 
         for (let i = 0; i < loggedUser.ratings.length; ++i) {
@@ -79,25 +85,25 @@ $(document).ready(function() {
                 }
             }
 
-            allRatings += "<li class='user-comment-item'>" +
-                "<div class='user-comment-body'>" +
-                    "<div class='user-comment-img'>" +
-                        "<img src='img/user.jpg' />" +
-                    "</div>" +
-                    "<div class='user-comment-text'>" +
-                        "<div id='" + recipes[i].id + "' class='recipes'>" + 
-                            "<h3>" + recipeName + "</h3>" +
-                            "<p>" + loggedUser.ratings[i].val + "</p>" +
-                        "</div>" + 
-                    "</div>" + 
-                "</div>" +
-            "</li>"
+            allRatings +=   "<li class='user-comment-item'>" +
+                                "<div class='user-comment-body'>" +
+                                    "<div class='user-comment-img'>" +
+                                        "<img src='img/user.jpg' />" +
+                                    "</div>" +
+                                    "<div class='user-comment-text'>" +
+                                        "<div id='" + recipes[i].id + "' class='recipes'>" + 
+                                            "<h3>" + recipeName + "</h3>" +
+                                            "<p>" + loggedUser.ratings[i].val + "</p>" +
+                                        "</div>" + 
+                                    "</div>" + 
+                                "</div>" +
+                            "</li>"
         }
         
-        if(allRatings == "<ul class='user-comment-list'>"){
-            allRatings = "<div class='row' id='empty-div'>" + 
-                "<p>Niste ocenili nijedan recept</p>" +
-            "</div>"
+        if(allRatings == "<ul class='user-comment-list'>") {
+            allRatings =    "<div class='row' id='empty-div'>" + 
+                                "<p>" + (language == "serbian" ? "Niste ocenili nijedan recept" : "You haven't rated any recipe") + "</p>" +
+                            "</div>"
         }
         else {
             allRatings += "</ul>"
@@ -106,9 +112,9 @@ $(document).ready(function() {
         $("#user-profile-pics").html(allRatings) 
     }
 
-    showRatings(recipes)
-    showComments(recipes)
-    showRecipes(recipes)
+    showRatings()
+    showComments()
+    showRecipes()
     
     $(".recipes").click(function() {
         let id = $(this).attr('id')
