@@ -1,5 +1,6 @@
 $(document).ready(function() {
     let recipe = JSON.parse(localStorage.getItem("recipeSingle"))
+    let language = sessionStorage.getItem("language")
 
     if(recipe == null) {
         window.location.href = "menu.html"

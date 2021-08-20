@@ -51,3 +51,16 @@ $("#blog3-p").html(language == "serbian" ? "Mnogi od nas se oslanjaju na jutarnj
 $("#blog4-h").html(language == "serbian" ? "Zašto je šećer štetan po ljudsko zdravlje" : "Why sugar is harmful to human health")
 $("#blog4-p").html(language == "serbian" ? " Velika većina ljudi je svesna da je šećer veoma štetan po ljudsko zdravlje. Ali mnogi od nijh ne bi mogli da navedu glavne razloge za to. U ovom članku ćemo videti zašto je to tako." : "The vast majority of people are aware that sugar is very harmful to human health. But many of them would not be able to state the main reasons for that. In this article, we will see why this is so.")
 
+
+
+$("#login-submit").html(language == "serbian" ?  "Potvrdi" : "Confirm")
+$("#register-submit").html(language == "serbian" ?  "Potvrdi" : "Confirm")
+
+$("log-error").html(language == "serbian" ?  "Podaci nisu ispravno uneti" : "Data not entered correctly")
+
+$("").html(language == "serbian" ?  "" : "")
+$("").html(language == "serbian" ?  "" : "")
+$("").html(language == "serbian" ?  "" : "")
+$("").html(language == "serbian" ?  "" : "")
+
+

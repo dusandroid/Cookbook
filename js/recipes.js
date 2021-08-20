@@ -2,7 +2,7 @@ $(document).ready(function() {
     let recipes = JSON.parse(localStorage.getItem("recipes"))
     let sortPrev = null
 
-    let language = JSON.parse(sessionStorage.getItem("language"))
+    let language = sessionStorage.getItem("language")
     if(language == null){
         language = "english"
         sessionStorage.setItem("language", JSON.stringify(language))

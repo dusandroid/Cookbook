@@ -24,6 +24,7 @@
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
         <link rel="stylesheet" href="css/styletmp.css">
+        <link rel="stylesheet" href="css/styledusan.css">
     </head>
 
     <body>
@@ -64,11 +65,11 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h2>Dodaj recept</h2>
+                        <h2 id="add-recipe-h2">Dodaj recept</h2>
                     </div>
                     <div class="col-12">
-                        <a href="index.html">Početna</a>
-                        <a href="">Dodaj recept</a>
+                        <a href="index.html" id="add-recipe-a1">Početna</a>
+                        <a href="#" id="add-recipe-a2">Dodaj recept</a>
                     </div>
                 </div>
             </div>
@@ -85,7 +86,7 @@
                             <div class="input-group">
                                 <input type="text" class="form-control" placeholder="Naziv jela" id="add-recipe-name" />
                             </div>
-                            <div class="error" id="add-recipe-error-name"></div>
+                            <div class="errors" id="add-recipe-error-name"></div>
                         </div>
                         <div class="control-group">
                             <div class="input-group">
@@ -98,30 +99,30 @@
                                     <option class="select-color" value="snack">Užina</option>
                                 </select>
                             </div>
-                            <div class="error" id="add-recipe-error-difficulty"></div>
+                            <div class="errors" id="add-recipe-error-difficulty"></div>
                         </div>
                         <div class="control-group">
                             <div class="input-group">
-                                <label for="" class="form-label">Trajanje:</label>
+                                <label for="" class="form-label" id="add-recipe-duration-label">Trajanje:</label>
                                 <input type="number" class="form-control duration-hours" placeholder="Sati" min="0" max="23" id="add-recipe-hours"/>
                                 <input type="number" class="form-control" placeholder="Minuti" min="0" max="59" id="add-recipe-minutes"/>
                             </div>
-                            <div class="error" id="add-recipe-error-time"></div>
+                            <div class="errors" id="add-recipe-error-time"></div>
                         </div>
                         <div class="control-group">
                             <div class="input-group">
                                 <input type="text" class="form-control" placeholder="URL ka videu" id="add-recipe-url"/>
-                                <label for="" class="form-label">Izaberite sliku:</label>
+                                <label for="" class="form-label" id="add-recipe-img-label">Izaberite sliku:</label>
                                 <input type="file" id="choose-file" accept="image/*" multiple>
                             </div>
-                            <div class="error" id="add-recipe-error-url"></div>
+                            <div class="errors" id="add-recipe-error-url"></div>
                         </div>
-                        <label for="" class="form-label">Uputstvo za pripremu:</label>
+                        <label for="" class="form-label" id="add-recipe-instructions-label">Uputstvo za pripremu:</label>
                         <div class="control-group">
                             <div class="input-group">
                                 <textarea class="form-control" placeholder="" rows="10" id="add-recipe-instructions"></textarea>
                             </div>
-                            <div class="error" id="add-recipe-error-instructions"></div>
+                            <div class="errors" id="add-recipe-error-instructions"></div>
                         </div>
                         <div>
                             <button class="btn custom-btn" type="submit" id="add-recipe">Potvrdi</button>
@@ -137,7 +138,7 @@
         <div class="footer">
             <div class="copyright">
                 <div class="container">
-                    <p>Copyright &copy; 2021 Aleksandra Milovic, Dusan Gradojevic, Odsek za softversko inzenjerstvo Elektrotehnickog fakulteta Univerziteta u Beogradu.</p>
+                    <p id="footer-text">Copyright &copy; 2021 Aleksandra Milovic, Dusan Gradojevic, Odsek za softversko inzenjerstvo Elektrotehnickog fakulteta Univerziteta u Beogradu.</p>
                 </div>
             </div>
         </div>
@@ -163,6 +164,8 @@
 
         <!-- Cookbook Javascript -->
         <script src="js/script.js"></script>
+        <script src="translate/script-t.js"></script>
         <script src="js/add-recipe.js"></script>
+        <script src="translate/add-recipe-t.js"></script>
     </body>
 </html>
