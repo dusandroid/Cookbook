@@ -284,15 +284,15 @@ $(document).ready(function() {
     else {
         $(".register-login").show()
         $(".navbar-nav").html("<a href='index.html' class='nav-item nav-link'>" + (language == "serbian" ? "Početna" : "Home") + "</a>" + 
-        "<a href='menu.html' class='nav-item nav-link'>" + (language == "serbian" ? "Recepti" : "Recipes") + "</a>" + 
-        "<div class='nav-item dropdown'>" + 
-            "<a href='#' class='nav-link dropdown-toggle' data-toggle='dropdown'>" + (language == "serbian" ? "Jezik" : "Language") + "</a>" + 
-            "<div class='dropdown-menu'>" + 
-                "<a href='#' id='serbian' class='dropdown-item language'>" + (language == "serbian" ? "Srpski" : "Serbian") + "</a>" + 
-                "<a href='#' id='english' class='dropdown-item language'>" + (language == "serbian" ? "Engleski" : "English") + "</a>" +
-            "</div>" +
-        "</div>" + 
-        "<a href='about.html' class='nav-item nav-link'>" + (language == "serbian" ? "O nama" : "About") + "</a>")
+                                "<a href='menu.html' class='nav-item nav-link'>" + (language == "serbian" ? "Recepti" : "Recipes") + "</a>" + 
+                                "<div class='nav-item dropdown'>" + 
+                                    "<a href='#' class='nav-link dropdown-toggle' data-toggle='dropdown'>" + (language == "serbian" ? "Jezik" : "Language") + "</a>" + 
+                                    "<div class='dropdown-menu'>" + 
+                                        "<a href='#' id='serbian' class='dropdown-item language'>" + (language == "serbian" ? "Srpski" : "Serbian") + "</a>" + 
+                                        "<a href='#' id='english' class='dropdown-item language'>" + (language == "serbian" ? "Engleski" : "English") + "</a>" +
+                                    "</div>" +
+                                "</div>" + 
+                                "<a href='about.html' class='nav-item nav-link'>" + (language == "serbian" ? "O nama" : "About") + "</a>")
     }
 
     let currPage = document.location.href.match(/[^\/]+$/)[0]
