@@ -53,6 +53,7 @@ $(document).ready(function() {
     }
     else {
         $("#delete-recipe-button").hide()
+        $(".comment-form").hide()
     }   
 
     
@@ -277,6 +278,7 @@ function generatePDF(){
     let text = ""
     let allPages = []
     let recipe = JSON.parse(localStorage.getItem("recipeSingle"))
+    let language = sessionStorage.getItem("language")
 
     let rtg = recipe.ratingNum == 0 ? 0 : (recipe.ratingSum / recipe.ratingNum).toFixed(1)
 

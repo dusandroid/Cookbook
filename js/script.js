@@ -237,7 +237,7 @@ $(document).ready(function() {
             }
         ]
         localStorage.setItem("users", JSON.stringify(users))
-        sessionStorage.setItem("loggedUser", null)
+        sessionStorage.setItem("loggedUser", "")
 
         let recipes = []
         for (let i = 0; i < users.length; ++i) {
