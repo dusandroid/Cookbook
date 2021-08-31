@@ -25,34 +25,42 @@ $(document).ready(function() {
         let videoUrl = $("#add-recipe-url").val()
         let instructions = $("#add-recipe-instructions").val()
 
+        $("#add-recipe-error-name").text("")
+        $("#add-recipe-error-group").text("")
+        $("#add-recipe-error-difficulty").text("")
+        $("#add-recipe-error-time").text("")
+        $("#add-recipe-error-url").text("")
+        $("#add-recipe-error-instructions").text("")
+
+
         let ret = false
 
         if (name == "") {
-            $("#add-recipe-error-name").text("Niste uneli korisničko ime")
+            $("#add-recipe-error-name").text(language == "serbian" ? "Niste uneli korisničko ime" : "You have not entered a username")
             ret = true
         }
         if (group == "" ){
-            $("#add-recipe-error-group").text("Niste uneli grupu")
+            $("#add-recipe-error-group").text(language == "serbian" ? "Niste uneli grupu" : "You have not entered a group")
             ret = true
         }
         if (difficulty == ""){
-            $("#add-recipe-error-difficulty").text("Niste uneli tezinu")
+            $("#add-recipe-error-difficulty").text(language == "serbian" ? "Niste uneli tezinu" : "You have not entered difficulty")
             ret = true
         }
         else if(difficulty < 0 || difficulty > 5){
-            $("#add-recipe-error-difficulty").text("Niste ispravno uneli tezinu")
+            $("#add-recipe-error-difficulty").text(language == "serbian" ? "Niste ispravno uneli tezinu" : "You have not enter the weight correctly")
             ret = true
         }
         if (hours == "" || minutes == "" || hours < 0 || minutes < 0 || minutes > 59){
-            $("#add-recipe-error-time").text("Niste ispravno uneli vreme")
+            $("#add-recipe-error-time").text(language == "serbian" ? "Niste ispravno uneli vreme" : "You have not enter the time correctly")
             ret = true
         }
         if (videoUrl == ""){
-            $("#add-recipe-error-url").text("Niste uneli video URL")
+            $("#add-recipe-error-url").text(language == "serbian" ? "Niste uneli video URL" : "You have not enter a video URL")
             ret = true
         }
         if (instructions == ""){
-            $("#add-recipe-error-instructions").text("Niste uneli instrukcije")
+            $("#add-recipe-error-instructions").text(language == "serbian" ? "Niste uneli instrukcije" : "You have not enter instructions")
             ret = true
         }
 
@@ -106,6 +114,7 @@ $(document).ready(function() {
         let recipes = JSON.parse(localStorage.getItem("recipes"))
         recipes.push(recipe)
         localStorage.setItem("recipes", JSON.stringify(recipes))
+        alert(language == "serbian" ? "Recept uspešno dodat!" : "Recipe successfully added!")
     })
 })
 
