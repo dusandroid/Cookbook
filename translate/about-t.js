@@ -6,7 +6,7 @@ $(document).ready(function() {
     }
 
     $("#h2-about").html(language == "serbian" ?  "O nama" : "About Us")
-    $("#breadcrumbs-home").html(language == "serbian" ?  "Početna" : "Start Page")
+    $("#breadcrumbs-home").html(language == "serbian" ?  "Početna" : "Home")
     $("#breadcrumbs-about").html(language == "serbian" ?  "O nama" : "About")
 
     $("#about-p").html(language == "serbian" ?  "O nama" : "About Us")

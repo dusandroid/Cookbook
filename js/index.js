@@ -130,7 +130,7 @@ $(document).ready(function() {
             password : password,
             recipes: [],
             comments: [],
-            grades: []
+            ratings: []
         }
 
         users.push(user)

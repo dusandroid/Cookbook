@@ -124,14 +124,14 @@ $(document).ready(function() {
     })
 
     $("#user-profile-recipes").click(function() {
-        showRecipes(recipes)
+        showRecipes()
     })
 
     $("#user-profile-comments").click(function() {
-        showComments(recipes)
+        showComments()
     })
 
     $("#user-profile-ratings").click(function() {
-        showRatings(recipes)
+        showRatings()
     })
 })

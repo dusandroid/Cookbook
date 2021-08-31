@@ -14,7 +14,6 @@ $(document).ready(function() {
     $(".recipe-name").text(recipe.name)
     $("#recipe-instructions").text(recipe.instructions)
 
-    $("#breadcrumbs-home").html(language == "serbian" ? "Recept" : "Recipe")
     $("#delete-recipe-button").html(language == "serbian" ? "Izbriši recept" : "Delete recipe")
 
     

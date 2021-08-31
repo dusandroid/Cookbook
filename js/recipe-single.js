@@ -1,6 +1,5 @@
 $(document).ready(function() {
     let recipe = JSON.parse(localStorage.getItem("recipeSingle"))
-    let language = sessionStorage.getItem("language")
 
     if(recipe == null) {
         window.location.href = "menu.html"
@@ -35,8 +34,9 @@ $(document).ready(function() {
     }
 
 
-    let currUser = JSON.parse(sessionStorage.getItem("loggedUser"))
-    if (currUser != null) {
+    let currUser = null
+    if (sessionStorage.getItem("loggedUser") != "" && sessionStorage.getItem("loggedUser") != null) {
+        currUser = JSON.parse(sessionStorage.getItem("loggedUser"))
         let myRecipe = false
         for(let i = 0; i < currUser.recipes.length; ++i) {
             if(recipe.author == currUser.recipes[i].author) {
@@ -46,6 +46,7 @@ $(document).ready(function() {
         }
         if (myRecipe) {
             $("#delete-recipe-button").show()
+            $(".rate").hide()
         }
         else {
             $("#delete-recipe-button").hide()

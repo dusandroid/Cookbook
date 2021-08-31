@@ -32,7 +32,7 @@ $(document).ready(function() {
     $("#recommended-courses-header3").html(language == "serbian" ?  "Kuvaj sa Gordonom" : "Cook with Gordon")
     $("#recommended-courses-text3").html(language == "serbian" ?    "Unapredite Vaše kulinarske veštine na sledeći nivo sa šef Remzijevim najpopularnijim kursem." : 
                                                                     "Get your cooking skills to the next level with Chef Ramsay's most popular course.")
-    $("#recommended-courses-btn").html(language == "serbian" ?  "Pogledaj kurseve" : "Look for courses")
+    $(".recommended-courses-btn").html(language == "serbian" ?  "Pogledaj kurseve" : "Look for courses")
 
     $("#top-recipes").html(language == "serbian" ?  "Najbolji recepti" : "Top recipes")
 
