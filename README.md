@@ -1,2 +1,2 @@
 # Cookbook
- Website where users can upload and view recipes.
+ Web application where users can upload and view recipes.
